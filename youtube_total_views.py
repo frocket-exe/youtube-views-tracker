@@ -2,7 +2,7 @@ from googleapiclient.discovery import build
 import json
 import os
 
-API_KEY = os.getenv("API_Key")
+API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
 
 youtube = build('youtube', 'v3', developerKey=API_KEY)
