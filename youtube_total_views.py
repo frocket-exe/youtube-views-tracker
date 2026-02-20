@@ -60,15 +60,16 @@ if __name__ == "__main__":
     total, noOfVids = get_total_views(ids)
     viewChange = total-prevViews
     current_time = datetime.now()
+    timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
     print(f"Total Views: {total:,}")
     print(f"across {noOfVids} different videos")
     print(f"\n{viewChange} new views since last update")
-    print(f"as of {current_time}")
+    print(f"as of {timeString}")
 
 with open("views.json", "w") as f:
     json.dump({
         "total_views": total,
         "video_count": noOfVids,
         "view_change": viewChange,
-        "timestamp":current_time
+        "timestamp": timeString
     }, f, indent=2)
