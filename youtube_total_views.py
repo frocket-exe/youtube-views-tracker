@@ -80,6 +80,7 @@ if __name__ == "__main__":
     print(f"{updateInterval} seconds since last update")
     print(f"averaged {viewsPerSecond} views per second")
     print(f"\nHighest estimated views is {overestimation}")
+    print(f"overestimated by {overestimation-total}")
 
 with open("views.json", "w") as f:
     json.dump({
