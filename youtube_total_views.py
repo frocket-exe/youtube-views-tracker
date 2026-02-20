@@ -10,6 +10,9 @@ PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
 with open("views.json") as f:
     json_data = json.load(f)
     prevViews = json_data["total_views"]
+    prevTime = json_data["timestamp"]
+
+prevTime = prevTime.strptime("%d/%m/%Y, %H:%M:%S")
 
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
@@ -54,6 +57,11 @@ def get_total_views(video_ids):
 
     return total_views, unique_videos
 
+def secondsBetween(t1, t2):
+    timeDiff = t2 - t1
+    seconds = timedelta.total_seconds(timeDiff)
+    roundSeconds = floor(seconds)
+    return roundSeconds
 
 if __name__ == "__main__":
     ids = get_video_ids(PLAYLIST_ID)
@@ -61,15 +69,18 @@ if __name__ == "__main__":
     viewChange = total-prevViews
     current_time = datetime.now()
     timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
+    updateInterval = secondsBetween(prevTime, current_time)
     print(f"Total Views: {total:,}")
     print(f"across {noOfVids} different videos")
     print(f"\n{viewChange} new views since last update")
     print(f"as of {timeString}")
+    print(f"{updateInterval} seconds since last update")
 
 with open("views.json", "w") as f:
     json.dump({
         "total_views": total,
         "video_count": noOfVids,
         "view_change": viewChange,
-        "timestamp": timeString
+        "timestamp": timeString,
+        "update_interval": updateInterval
     }, f, indent=2)
