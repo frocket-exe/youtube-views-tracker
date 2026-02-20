@@ -82,10 +82,10 @@ if __name__ == "__main__":
     print(f"as of {timeString}")
     print(f"{updateInterval:,} seconds since last update", end=" ")
     if minutesInt > 0:
-        print("(")
+        print("(", end="")
         if hoursInt > 0:
-            print(f"{hoursInt} hours, ", end="")
-        print(f"{minutesInt} minutes and {secondsInt} seconds)")
+            print(f"{hoursInt}h, ", end="")
+        print(f"{minutesInt}m and {secondsInt}s)")
     print(f"averaged {viewsPerSecond:,} views per second")
     print(f"\nHighest estimated views is {overestimation:,}")
     print(f"overestimated by {overestimation-total:,}")
