@@ -70,11 +70,13 @@ if __name__ == "__main__":
     current_time = datetime.now()
     timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
     updateInterval = secondsBetween(prevTime, current_time)
+    viewsPerSecond = round((viewChange/updateInterval), 4)
     print(f"Total Views: {total:,}")
     print(f"across {noOfVids} different videos")
     print(f"\n{viewChange} new views since last update")
     print(f"as of {timeString}")
     print(f"{updateInterval} seconds since last update")
+    print(f"averaged {viewsPerSecond} views per second")
 
 with open("views.json", "w") as f:
     json.dump({
@@ -82,5 +84,6 @@ with open("views.json", "w") as f:
         "video_count": noOfVids,
         "view_change": viewChange,
         "timestamp": timeString,
-        "update_interval": updateInterval
+        "update_interval": updateInterval,
+        "views_per_second": viewsPerSecond
     }, f, indent=2)
