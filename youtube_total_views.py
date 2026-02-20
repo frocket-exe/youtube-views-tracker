@@ -89,5 +89,5 @@ with open("views.json", "w") as f:
         "timestamp": timeString,
         "update_interval": updateInterval,
         "views_per_second": viewsPerSecond,
-        "overestimate": overestimation
+        "overestimate": round(overestimation)
     }, f, indent=2)
