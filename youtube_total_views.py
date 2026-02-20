@@ -74,13 +74,13 @@ if __name__ == "__main__":
     viewsPerSecond = round((viewChange/updateInterval), 4)
     overestimation = round(prevViews + (prevVPS*updateInterval))
     print(f"Total Views: {total:,}")
-    print(f"across {noOfVids} different videos")
-    print(f"\n{viewChange} new views since last update")
+    print(f"across {noOfVids:,} different videos")
+    print(f"\n{viewChange:,} new views since last update")
     print(f"as of {timeString}")
-    print(f"{updateInterval} seconds since last update")
-    print(f"averaged {viewsPerSecond} views per second")
-    print(f"\nHighest estimated views is {overestimation}")
-    print(f"overestimated by {overestimation-total}")
+    print(f"{updateInterval:,} seconds since last update")
+    print(f"averaged {viewsPerSecond:,} views per second")
+    print(f"\nHighest estimated views is {overestimation:,}")
+    print(f"overestimated by {overestimation-total:,}")
 
 with open("views.json", "w") as f:
     json.dump({
