@@ -5,6 +5,10 @@ import os
 API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
 
+with open("views.json") as f:
+    json_data = json.load(f)
+    prevViews = json_data["total_views"]
+
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 def get_video_ids(playlist_id):
@@ -52,11 +56,14 @@ def get_total_views(video_ids):
 if __name__ == "__main__":
     ids = get_video_ids(PLAYLIST_ID)
     total, noOfVids = get_total_views(ids)
+    viewChange = total-prevViews
     print(f"Total Views: {total:,}")
     print(f"across {noOfVids} different videos")
+    print(f"\n{viewChange} new views since last update")
 
 with open("views.json", "w") as f:
     json.dump({
         "total_views": total,
-        "video_count": noOfVids
+        "video_count": noOfVids,
+        "view_change": viewChange
     }, f, indent=2)
