@@ -12,7 +12,7 @@ with open("views.json") as f:
     prevViews = json_data["total_views"]
     prevTime = json_data["timestamp"]
 
-prevTime = prevTime.strptime("%d/%m/%Y, %H:%M:%S")
+prevTime = datetime.strptime(prevTime, "%d/%m/%Y, %H:%M:%S")
 
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
