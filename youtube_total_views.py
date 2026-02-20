@@ -1,6 +1,8 @@
 from googleapiclient.discovery import build
 import json
 import os
+from datetime import datetime, timedelta
+from math import floor
 
 API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
@@ -57,13 +59,16 @@ if __name__ == "__main__":
     ids = get_video_ids(PLAYLIST_ID)
     total, noOfVids = get_total_views(ids)
     viewChange = total-prevViews
+    current_time = datetime.now()
     print(f"Total Views: {total:,}")
     print(f"across {noOfVids} different videos")
     print(f"\n{viewChange} new views since last update")
+    print(f"as of {current_time}")
 
 with open("views.json", "w") as f:
     json.dump({
         "total_views": total,
         "video_count": noOfVids,
-        "view_change": viewChange
+        "view_change": viewChange,
+        "timestamp":current_time
     }, f, indent=2)
