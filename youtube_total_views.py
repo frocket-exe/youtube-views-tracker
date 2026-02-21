@@ -12,6 +12,7 @@ with open("views.json") as f:
     prevViews = json_data["total_views"]
     prevTime = json_data["timestamp"]
     prevVPS = json_data["views_per_second"]
+    prevOverest = json_data["overestimate"]
 
 prevTime = datetime.strptime(prevTime, "%d/%m/%Y, %H:%M:%S")
 
@@ -73,6 +74,8 @@ if __name__ == "__main__":
     updateInterval = secondsBetween(prevTime, current_time)
     viewsPerSecond = round((viewChange/updateInterval), 4)
     overestimation = round(prevViews + (prevVPS*updateInterval))
+    if overestimation <= prevOverest:
+        overestimation = prevOverest+1
     print(f"Total Views: {total:,}")
     print(f"across {noOfVids:,} different videos")
     print(f"\n{viewChange:,} new views since last update")
