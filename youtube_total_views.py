@@ -92,6 +92,7 @@ if __name__ == "__main__":
     print(f"averaged {viewsPerSecond:,} views per second")
     print(f"\nHighest estimated views is {overestimation:,}")
     print(f"overestimated by {overestimation-total:,}")
+    print(f"Corrective scale: {round(viewChange/(overestimation-prevViews), 3)}")
 
 with open("views.json", "w") as f:
     json.dump({
