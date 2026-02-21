@@ -73,15 +73,15 @@ if __name__ == "__main__":
     updateInterval = secondsBetween(prevTime, current_time)
     viewsPerSecond = round((viewChange/updateInterval), 4)
     overestimation = round(prevViews + (prevVPS*updateInterval))
-    hoursInt = floor(updateInterval/(60*60))
-    minutesInt = floor(updateInterval/60)-60*hoursInt
-    secondsInt = floor(updateInterval%60)
     print(f"Total Views: {total:,}")
     print(f"across {noOfVids:,} different videos")
     print(f"\n{viewChange:,} new views since last update")
     print(f"as of {timeString}")
     print(f"{updateInterval:,} seconds since last update", end=" ")
-    if minutesInt > 0:
+    if updateInterval > 60:
+        hoursInt = floor(updateInterval/(60*60))
+        minutesInt = floor(updateInterval/60)-60*hoursInt
+        secondsInt = floor(updateInterval%60)
         print("(", end="")
         if hoursInt > 0:
             print(f"{hoursInt}h, ", end="")
