@@ -1,10 +1,10 @@
 {
-  "total_views": 14400853,
+  "total_views": 14401013,
   "video_count": 35,
-  "view_change": 41,
-  "timestamp": "22/02/2026, 00:02:23",
-  "update_interval": 1912,
-  "views_per_second": 0.0214,
-  "overestimate": 14400906,
-  "delta": 53
+  "view_change": 160,
+  "timestamp": "22/02/2026, 00:43:18",
+  "update_interval": 2455,
+  "views_per_second": 0.0652,
+  "overestimate": 14400907,
+  "delta": -106
 }
