@@ -1,9 +1,20 @@
 from googleapiclient.discovery import build
 import json
 import os
+from datetime import datetime, timedelta
+from math import floor
 
 API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
+
+with open("views.json") as f:
+    json_data = json.load(f)
+    prevViews = json_data["total_views"]
+    prevTime = json_data["timestamp"]
+    prevVPS = json_data["views_per_second"]
+    prevOverest = json_data["overestimate"]
+
+prevTime = datetime.strptime(prevTime, "%d/%m/%Y, %H:%M:%S")
 
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
@@ -48,15 +59,49 @@ def get_total_views(video_ids):
 
     return total_views, unique_videos
 
+def secondsBetween(t1, t2):
+    timeDiff = t2 - t1
+    seconds = timedelta.total_seconds(timeDiff)
+    roundSeconds = floor(seconds)
+    return roundSeconds
 
 if __name__ == "__main__":
     ids = get_video_ids(PLAYLIST_ID)
     total, noOfVids = get_total_views(ids)
+    viewChange = total-prevViews
+    current_time = datetime.now()
+    timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
+    updateInterval = secondsBetween(prevTime, current_time)
+    viewsPerSecond = round((viewChange/updateInterval), 4)
+    overestimation = round(prevViews + (prevVPS*updateInterval))
+    if overestimation <= prevOverest:
+        overestimation = prevOverest+1
     print(f"Total Views: {total:,}")
-    print(f"across {noOfVids} different videos")
+    print(f"across {noOfVids:,} different videos")
+    print(f"\n{viewChange:,} new views since last update")
+    print(f"as of {timeString}")
+    print(f"{updateInterval:,} seconds since last update", end=" ")
+    if updateInterval > 60:
+        hoursInt = floor(updateInterval/(60*60))
+        minutesInt = floor(updateInterval/60)-60*hoursInt
+        secondsInt = floor(updateInterval%60)
+        print("(", end="")
+        if hoursInt > 0:
+            print(f"{hoursInt}h, ", end="")
+        print(f"{minutesInt}m and {secondsInt}s)")
+    print(f"averaged {viewsPerSecond:,} views per second")
+    print(f"\nHighest estimated views is {overestimation:,}")
+    print(f"overestimated by {overestimation-total:,}")
+    print(f"Corrective scale: {round(viewChange/(overestimation-prevViews), 3)}")
 
 with open("views.json", "w") as f:
     json.dump({
         "total_views": total,
-        "video_count": noOfVids
+        "video_count": noOfVids,
+        "view_change": viewChange,
+        "timestamp": timeString,
+        "update_interval": updateInterval,
+        "views_per_second": viewsPerSecond,
+        "overestimate": overestimation,
+        "delta": overestimation-total
     }, f, indent=2)
