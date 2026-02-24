@@ -14,6 +14,7 @@ with open("views.json") as f:
     prevVPS = json_data["estimation"]["calc_vps"]
     prevOverest = json_data["estimation"]["overestimate"]
     vpsList = json_data["estimation"]["vps_history"]
+    print(vpsList.len())
 
 prevTime = datetime.strptime(prevTime, "%d/%m/%Y, %H:%M:%S")
 
