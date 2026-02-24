@@ -77,7 +77,7 @@ if __name__ == "__main__":
     viewsPerSecond = round((viewChange/updateInterval), 4)
     vpsList.pop(0)
     vpsList.append(viewsPerSecond)
-    sorted_vpsList = vpsList.sort()
+    sorted_vpsList = sorted(vpsList)
     print(vpsList)
     print(sorted_vpsList)
     calcVps = sorted_vpsList[1]
