@@ -94,14 +94,21 @@ if __name__ == "__main__":
     print(f"overestimated by {overestimation-total:,}")
     print(f"Corrective scale: {round(viewChange/(overestimation-prevViews), 3)}")
 
+json_main = {
+    "total_views": total,
+    "video_count": noOfVids
+}
+
+json_est = {
+    "calc_vps":0.0466,
+    "view_change": viewChange,
+    "timestamp": timeString,
+    "overestimate": overestimation,
+    "vps_history":"[0.0466, 0.0467, 0.0468, 0.0469, 0.047, 0.0471, 0.0472, 0.0473]"
+}
+
 with open("views.json", "w") as f:
     json.dump({
-        "total_views": total,
-        "video_count": noOfVids,
-        "view_change": viewChange,
-        "timestamp": timeString,
-        "update_interval": updateInterval,
-        "views_per_second": viewsPerSecond,
-        "overestimate": overestimation,
-        "delta": overestimation-total
+        "main":json_main,
+        "estimation":json_est
     }, f, indent=2)
