@@ -13,7 +13,7 @@ with open("views.json") as f:
     prevTime = json_data["estimation"]["timestamp"]
     prevVPS = json_data["estimation"]["calc_vps"]
     prevOverest = json_data["estimation"]["overestimate"]
-    vpsList = json_data["estimation"]["vps_history"]
+    vpsList = json.load(json_data["estimation"]["vps_history"])
     print(type(vpsList))
     print(vpsList)
 
