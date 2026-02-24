@@ -10,11 +10,10 @@ PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
 with open("views.json") as f:
     json_data = json.load(f)
     prevViews = json_data["main"]["total_views"]
-    prevTime = json_data["estimation"]["timestamp"]
+    prevTime = json_data["main"]["timestamp"]
     prevVPS = json_data["estimation"]["calc_vps"]
     prevOverest = json_data["estimation"]["overestimate"]
     vpsList = json_data["estimation"]["vps_history"]
-    print(len(vpsList))
 
 prevTime = datetime.strptime(prevTime, "%d/%m/%Y, %H:%M:%S")
 
