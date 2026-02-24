@@ -48,7 +48,7 @@ def get_total_views(video_ids):
     total_views = 0
     unique_videos = 0
 
-    for i in range(0, len(video_ids), 50):  # API limit: 50 IDs per request
+    for i in range(0, len(video_ids), 50):
         request = youtube.videos().list(
             part="statistics",
             id=",".join(video_ids[i:i+50])
@@ -84,8 +84,8 @@ if __name__ == "__main__":
         overestimation = prevOverest+1
     print(f"Total Views: {total:,}")
     print(f"across {noOfVids:,} different videos")
-    print(f"\n{viewChange:,} new views since last update")
     print(f"as of {timeString}")
+    print(f"\n{viewChange:,} new views since last update")
     print(f"{updateInterval:,} seconds since last update", end=" ")
     if updateInterval > 60:
         hoursInt = floor(updateInterval/(60*60))
@@ -105,13 +105,13 @@ if __name__ == "__main__":
 
 json_main = {
     "total_views": total,
-    "video_count": noOfVids
+    "video_count": noOfVids,
+    "timestamp": timeString
 }
 
 json_est = {
     "calc_vps":calcVps,
     "view_change": viewChange,
-    "timestamp": timeString,
     "overestimate": overestimation,
     "vps_history":vpsList
 }
