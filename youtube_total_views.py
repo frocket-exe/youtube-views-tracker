@@ -76,7 +76,7 @@ if __name__ == "__main__":
     viewsPerSecond = round((viewChange/updateInterval), 4)
     vpsList.pop(0)
     vpsList.append(viewsPerSecond)
-    calcVps = vpsList.sort()[1]
+    calcVps = (vpsList.sort())[1]
     overestimation = round(prevViews + (prevVPS*updateInterval))
     if overestimation <= prevOverest:
         overestimation = prevOverest+1
