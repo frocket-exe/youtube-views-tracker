@@ -76,7 +76,8 @@ if __name__ == "__main__":
     viewsPerSecond = round((viewChange/updateInterval), 4)
     vpsList.pop(0)
     vpsList.append(viewsPerSecond)
-    calcVps = (vpsList.sort())[1]
+    sorted_vpsList = vpsList.sort()
+    calcVps = sorted_vpsList[1]
     overestimation = round(prevViews + (prevVPS*updateInterval))
     if overestimation <= prevOverest:
         overestimation = prevOverest+1
@@ -95,7 +96,7 @@ if __name__ == "__main__":
         print(f"{minutesInt}m and {secondsInt}s)")
     print(f"averaged {viewsPerSecond:,} views per second")
     print(f"Last 8 VPSs: {vpsList}")
-    print(f"Sorted list of VPSs: {vpsList.sort()}")
+    print(f"Sorted list of VPSs: {sorted_vpsList}")
     print(f"\nHighest estimated views is {overestimation:,}")
     print(f"overestimated by {overestimation-total:,}")
     print(f"Corrective scale: {round(viewChange/(overestimation-prevViews), 3)}")
