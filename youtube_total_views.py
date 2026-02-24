@@ -14,6 +14,7 @@ with open("views.json") as f:
     prevVPS = json_data["estimation"]["calc_vps"]
     prevOverest = json_data["estimation"]["overestimate"]
     vpsList = json_data["estimation"]["vps_history"]
+    print(type(vpsList))
 
 prevTime = datetime.strptime(prevTime, "%d/%m/%Y, %H:%M:%S")
 
@@ -74,10 +75,10 @@ if __name__ == "__main__":
     timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
     updateInterval = secondsBetween(prevTime, current_time)
     viewsPerSecond = round((viewChange/updateInterval), 4)
-    vpsList.pop(0)
-    vpsList.append(viewsPerSecond)
-    sorted_vpsList = vpsList.sort()
-    calcVps = sorted_vpsList[1]
+    #vpsList.pop(0)
+    #vpsList.append(viewsPerSecond)
+    #sorted_vpsList = vpsList.sort()
+    #calcVps = sorted_vpsList[1]
     overestimation = round(prevViews + (prevVPS*updateInterval))
     if overestimation <= prevOverest:
         overestimation = prevOverest+1
@@ -95,8 +96,8 @@ if __name__ == "__main__":
             print(f"{hoursInt}h, ", end="")
         print(f"{minutesInt}m and {secondsInt}s)")
     print(f"averaged {viewsPerSecond:,} views per second")
-    print(f"Last 8 VPSs: {vpsList}")
-    print(f"Sorted list of VPSs: {sorted_vpsList}")
+    #print(f"Last 8 VPSs: {vpsList}")
+    #print(f"Sorted list of VPSs: {sorted_vpsList}")
     print(f"\nHighest estimated views is {overestimation:,}")
     print(f"overestimated by {overestimation-total:,}")
     print(f"Corrective scale: {round(viewChange/(overestimation-prevViews), 3)}")
