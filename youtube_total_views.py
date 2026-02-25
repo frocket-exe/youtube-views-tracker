@@ -109,9 +109,8 @@ json_main = {
 }
 
 json_est = {
-    "calc_vps":calcVps,
-    "view_change": viewChange,
     "overestimate": overestimation,
+    "calc_vps":calcVps,
     "vps_history":vpsList
 }
 
