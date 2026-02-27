@@ -12,7 +12,6 @@ with open("views.json") as f:
     prevViews = json_data["main"]["total_views"]
     prevTime = json_data["main"]["timestamp"]
     prevVPS = json_data["estimation"]["calc_vps"]
-    prevOverest = json_data["estimation"]["overestimate"]
     vpsList = json_data["estimation"]["vps_history"]
 
 prevTime = datetime.strptime(prevTime, "%d/%m/%Y, %H:%M:%S")
@@ -69,6 +68,7 @@ def secondsBetween(t1, t2):
 if __name__ == "__main__":
     ids = get_video_ids(PLAYLIST_ID)
     total, noOfVids = get_total_views(ids)
+    
     viewChange = total-prevViews
     current_time = datetime.now()
     timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
@@ -77,13 +77,13 @@ if __name__ == "__main__":
     vpsList.pop(0)
     vpsList.append(viewsPerSecond)
     sorted_vpsList = sorted(vpsList)
+
     calcVps = sorted_vpsList[1]
-    overestimation = round(prevViews + (prevVPS*updateInterval))
-    if overestimation <= prevOverest:
-        overestimation = prevOverest+1
-    print(f"Total Views: {total:,}")
+
+    print(f"\nTotal Views: {total:,}")
     print(f"across {noOfVids:,} different videos")
     print(f"as of {timeString}")
+
     print(f"\n{viewChange:,} new views since last update")
     print(f"{updateInterval:,} seconds since last update", end=" ")
     if updateInterval > 60:
@@ -95,12 +95,10 @@ if __name__ == "__main__":
             print(f"{hoursInt}h, ", end="")
         print(f"{minutesInt}m and {secondsInt}s)")
     print(f"averaged {viewsPerSecond:,} views per second")
-    print(f"Last 8 VPSs: {vpsList}")
+
+    print(f"\nLast 8 VPSs: {vpsList}")
     print(f"Sorted list of VPSs: {sorted_vpsList}")
     print(f"Calculated VPS is {calcVps}")
-    print(f"\nHighest estimated views is {overestimation:,}")
-    print(f"overestimated by {overestimation-total:,}")
-    print(f"Corrective scale: {round(viewChange/(overestimation-prevViews), 3)}")
 
 json_main = {
     "total_views": total,
@@ -109,7 +107,6 @@ json_main = {
 }
 
 json_est = {
-    "overestimate": overestimation,
     "calc_vps":calcVps,
     "vps_history":vpsList
 }
