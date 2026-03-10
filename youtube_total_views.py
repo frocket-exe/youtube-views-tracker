@@ -105,7 +105,7 @@ if __name__ == "__main__":
     daysThisYear = int(secondsBetween(jan1, current_time)/86400)
     print(f"\n{daysThisYear} days this year")
     viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
-    print(f"{viewsPerDay} views per day")
+    print(f"{viewsPerDay:,} views per day")
     estEnd = prevYearViews + (365*viewsPerDay)
     print(f"{estEnd:,} views by the end of the year")
 
