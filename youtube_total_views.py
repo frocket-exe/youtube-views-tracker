@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     print(f"\nLast 8 VPSs: {vpsList}")
     print(f"Sorted list of VPSs: {sorted_vpsList}")
-    print(f"Calculated VPS is {calcVps}")
+    print(f"Calculated VPS is {calcVps}\n")
 
     prevYearViews = 13964150
     jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
@@ -108,6 +108,18 @@ if __name__ == "__main__":
     print(f"{viewsPerDay:,} views per day")
     estEnd = prevYearViews + (365*viewsPerDay)
     print(f"{estEnd:,} views by the end of the year")
+
+    def milestoneDate(milestone):
+        viewsToGet = milestone-prevYearViews
+        daysLeft = viewsToGet/viewsPerDay
+        milestoneDay = current_time + daysLeft*86400000
+        milestoneDay = datetime.strftime("%d/%m/%Y")
+        return (f"Will achieve {milestone:,} views on {milestoneDay:,}}")
+    
+    print(f"{milestoneDate(15000000)}")
+    print(f"{milestoneDate(16000000)}")
+    print(f"{milestoneDate(17500000)}")
+    print(f"{milestoneDate(20000000)}")
 
 json_main = {
     "total_views": total,
