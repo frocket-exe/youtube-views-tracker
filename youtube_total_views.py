@@ -114,7 +114,7 @@ if __name__ == "__main__":
         daysLeft = viewsToGet/viewsPerDay
         milestoneDay = current_time + timedelta(days=daysLeft)
         milestoneDay = milestoneDay.strftime("%d/%m/%Y")
-        return (f"Will achieve {milestone:,} views on {milestoneDay:,}")
+        return (f"Will achieve {milestone:,} views on {milestoneDay}")
     
     print(f"{milestoneDate(15000000)}")
     print(f"{milestoneDate(16000000)}")
