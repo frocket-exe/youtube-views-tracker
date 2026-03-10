@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     print(f"\nLast 8 VPSs: {vpsList}")
     print(f"Sorted list of VPSs: {sorted_vpsList}")
-    print(f"Calculated VPS is {calcVps}\n")
+    print(f"Calculated VPS is {calcVps}")
 
     prevYearViews = 13964150
     jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
@@ -107,10 +107,10 @@ if __name__ == "__main__":
     viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
     print(f"{viewsPerDay:,} views per day")
     estEnd = prevYearViews + (365*viewsPerDay)
-    print(f"{estEnd:,} views by the end of the year")
+    print(f"{estEnd:,} views by the end of the year\n")
 
     def milestoneDate(milestone):
-        viewsToGet = milestone-prevYearViews
+        viewsToGet = milestone-total
         daysLeft = viewsToGet/viewsPerDay
         milestoneDay = current_time + timedelta(days=daysLeft)
         milestoneDay = milestoneDay.strftime("%d/%m/%Y")
