@@ -1,7 +1,7 @@
 from googleapiclient.discovery import build
 import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from math import floor
 
 API_KEY = os.getenv("API_KEY")
@@ -99,6 +99,14 @@ if __name__ == "__main__":
     print(f"\nLast 8 VPSs: {vpsList}")
     print(f"Sorted list of VPSs: {sorted_vpsList}")
     print(f"Calculated VPS is {calcVps}")
+
+    jan1 = date(2026, 1, 1)
+    daysThisYear = (current_time - jan1).days
+    print(f"\n{daysThisYear} days this year")
+    viewsPerDay = (floor(total/daysThisYear))
+    print(viewsPerDay)
+    estEnd = 13964150 + (365*viewsPerDay)
+    print(f"{estEnd:,} views by the end of the year")
 
 json_main = {
     "total_views": total,
