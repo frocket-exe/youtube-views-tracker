@@ -112,7 +112,7 @@ if __name__ == "__main__":
     def milestoneDate(milestone):
         viewsToGet = milestone-prevYearViews
         daysLeft = viewsToGet/viewsPerDay
-        milestoneDay = timeString + daysLeft*86400000
+        milestoneDay = current_time + timedelta(days=daysLeft)
         milestoneDay = datetime.strftime("%d/%m/%Y")
         return (f"Will achieve {milestone:,} views on {milestoneDay:,}")
     
