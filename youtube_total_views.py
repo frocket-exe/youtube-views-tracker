@@ -101,10 +101,10 @@ if __name__ == "__main__":
     print(f"Calculated VPS is {calcVps}")
 
     jan1 = date(2026, 1, 1)
-    daysThisYear = (current_time - jan1).days
+    daysThisYear = timedelta.total_days(current_time - jan1)
     print(f"\n{daysThisYear} days this year")
     viewsPerDay = (floor(total/daysThisYear))
-    print(viewsPerDay)
+    print(f"{viewsPerDay} views per day")
     estEnd = 13964150 + (365*viewsPerDay)
     print(f"{estEnd:,} views by the end of the year")
 
