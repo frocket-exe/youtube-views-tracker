@@ -100,12 +100,13 @@ if __name__ == "__main__":
     print(f"Sorted list of VPSs: {sorted_vpsList}")
     print(f"Calculated VPS is {calcVps}")
 
+    prevYearViews = 13964150
     jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
     daysThisYear = int(secondsBetween(jan1, current_time)/86400)
     print(f"\n{daysThisYear} days this year")
-    viewsPerDay = (floor(total/daysThisYear))
+    viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
     print(f"{viewsPerDay} views per day")
-    estEnd = 13964150 + (365*viewsPerDay)
+    estEnd = prevYearViews + (365*viewsPerDay)
     print(f"{estEnd:,} views by the end of the year")
 
 json_main = {
