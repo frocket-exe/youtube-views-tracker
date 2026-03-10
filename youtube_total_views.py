@@ -100,7 +100,7 @@ if __name__ == "__main__":
     print(f"Sorted list of VPSs: {sorted_vpsList}")
     print(f"Calculated VPS is {calcVps}")
 
-    jan1 = date(2026, 1, 1)
+    jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
     daysThisYear = int(secondsBetween(jan1, current_time)/86400)
     print(f"\n{daysThisYear} days this year")
     viewsPerDay = (floor(total/daysThisYear))
