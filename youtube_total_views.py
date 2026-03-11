@@ -127,6 +127,16 @@ print(f"{viewsPerDay:,} views per day")
 estEnd = prevYearViews + (365*viewsPerDay)
 print(f"{estEnd:,} views by the end of the year\n")
 
+with open("milestones.json") as f:
+    json_data = json.load(f)
+    past = json_data["past"]
+    future = json_data["future"]
+
+print(past)
+print(type(past))
+print(future)
+print(type(future))
+
 def milestoneDate(milestone):
     viewsToGet = milestone-total
     daysLeft = viewsToGet/viewsPerDay
@@ -134,7 +144,9 @@ def milestoneDate(milestone):
     milestoneDay = milestoneDay.strftime("%d/%m/%Y")
     return (f"Will achieve {milestone:,} views on {milestoneDay}")
 
-print(f"{milestoneDate(15000000)}")
-print(f"{milestoneDate(16000000)}")
-print(f"{milestoneDate(17500000)}")
-print(f"{milestoneDate(20000000)}")
+def pastMilestoneDate(milestone):
+    overBy = total-milestone
+    secondsSince = overBy/viewsPerSecond
+    print("\nAchieved milestone {secondsSince:,} seconds ago.")
+
+pastMilestoneDate(14617500)
