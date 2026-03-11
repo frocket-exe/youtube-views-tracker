@@ -165,6 +165,8 @@ for milestoneViews in [i for i in future]:
     else:
         milestoneDate(milestoneViews)
 
+past = {"milestone 1":"completed today"}
+
 json_data = {
     "past":past,
     "future":future
