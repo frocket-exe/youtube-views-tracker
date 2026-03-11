@@ -137,11 +137,18 @@ def milestoneDate(milestone):
     daysLeft = viewsToGet/viewsPerDay
     milestoneDay = current_time + timedelta(days=daysLeft)
     milestoneDay = milestoneDay.strftime("%d/%m/%Y")
-    return (f"Will achieve {milestone:,} views on {milestoneDay}")
+    print(f"Will achieve {milestone:,} views on {milestoneDay}")
+    return milestoneDay
 
 def pastMilestoneDate(milestone):
     overBy = total-milestone
-    secondsSince = overBy/viewsPerSecond
-    print(f"\nAchieved milestone {secondsSince:,} seconds ago.")
+    secondsSince = floor(overBy/viewsPerSecond)
+    print(f"\nAchieved {milestone:,} views {secondsSince:,} seconds ago.")
+    return secondsSince
 
-pastMilestoneDate(14617500)
+for milestoneViews in future:
+    if total >= milestoneViews:
+        past.update({milestoneViews : pastMilestoneDate(milestoneViews)})
+        future.remove(milestoneViews)
+    else:
+        milestoneDate(milestoneViews)
