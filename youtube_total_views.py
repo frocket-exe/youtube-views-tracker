@@ -146,12 +146,12 @@ def pastMilestoneDate(milestone):
     print(f"\nAchieved {milestone:,} views {secondsSince:,} seconds ago.")
     return secondsSince
 
-for milestoneViews in future:
-    print(future)
+for milestoneViews in [i for i in future]:
     if total >= milestoneViews:
         past.update({milestoneViews : pastMilestoneDate(milestoneViews)})
         future.remove(milestoneViews)
-        print(milestoneViews)
-        print(future)
     else:
         milestoneDate(milestoneViews)
+
+print(past)
+print(future)
