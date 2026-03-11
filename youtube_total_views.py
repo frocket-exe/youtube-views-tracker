@@ -127,10 +127,20 @@ print(f"{viewsPerDay:,} views per day")
 estEnd = prevYearViews + (365*viewsPerDay)
 print(f"{estEnd:,} views by the end of the year\n")
 
-with open("milestones.json") as f:
-    json_data = json.load(f)
-    past = json_data["past"]
-    future = json_data["future"]
+# with open("milestones.json") as f:
+#     json_data = json.load(f)
+#     past = json_data["past"]
+#     future = json_data["future"]
+
+past = {}
+future = [14617900,
+        14618000,
+        14620000,
+        14750000,
+        15000000, 
+        16000000, 
+        17500000, 
+        20000000]
 
 def milestoneDate(milestone):
     viewsToGet = milestone-total
