@@ -155,10 +155,12 @@ for milestoneViews in [i for i in future]:
     else:
         milestoneDate(milestoneViews)
 
-with open("milestones.json", "w") as f:
-    json.dump({
-        "past":past,
-        "future":future
-    }, f, indent=2)
+json_data = {
+    "past":past,
+    "future":future
+}
 
-print(f"\n Uploaded past:{past}, future:{future} to json")
+with open("milestones.json", "w") as f:
+    json.dump(json_data, f, indent=2)
+
+print(f"\n Uploaded {json_data} to json")
