@@ -145,7 +145,7 @@ def pastMilestoneDate(milestone):
     secondsSince = floor(overBy/viewsPerSecond)
     milestoneTimestamp = current_time - timedelta(seconds=secondsSince)
     milestoneTimestamp = milestoneTimestamp.strftime("%d/%m/%Y, %H:%M")
-    print(f"\nAchieved {milestone:,} at {milestoneTimestamp}")
+    print(f"Achieved {milestone:,} at {milestoneTimestamp}")
     return milestoneTimestamp
 
 for milestoneViews in [i for i in future]:
@@ -155,5 +155,8 @@ for milestoneViews in [i for i in future]:
     else:
         milestoneDate(milestoneViews)
 
-print(past)
-print(future)
+with open("milestone.json", "w") as f:
+    json.dump({
+        "past":past,
+        "future":future
+    }, f, indent=2)
