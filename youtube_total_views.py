@@ -160,5 +160,3 @@ with open("milestones.json", "w") as f:
     "past":past,
     "future":future
 }, f, indent=2)
-
-print(f"\n Uploaded {json_data} to json")
