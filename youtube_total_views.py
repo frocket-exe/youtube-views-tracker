@@ -143,8 +143,10 @@ def milestoneDate(milestone):
 def pastMilestoneDate(milestone):
     overBy = total-milestone
     secondsSince = floor(overBy/viewsPerSecond)
-    print(f"\nAchieved {milestone:,} views {secondsSince:,} seconds ago.")
-    return secondsSince
+    milestoneTimestamp = current_time - timedelta(seconds=secondsSince)
+    milestoneTimestamp = milestoneTimestamp.strftime("%d/%m/%Y, %H:%M")
+    print(f"\nAchieved {milestone:,} at {milestoneTimestamp:,}")
+    return milestoneTimestamp
 
 for milestoneViews in [i for i in future]:
     if total >= milestoneViews:
