@@ -161,6 +161,6 @@ json_data = {
 }
 
 with open("milestones.json", "w") as f:
-    json.dump(json_data, f, indent=2)
+    json.dump({"Key":"value"}, f, indent=2)
 
 print(f"\n Uploaded {json_data} to json")
