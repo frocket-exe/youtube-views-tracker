@@ -147,7 +147,11 @@ def pastMilestoneDate(milestone):
     return secondsSince
 
 for milestoneViews in future:
+    print(future)
     if total >= milestoneViews:
         past.update({milestoneViews : pastMilestoneDate(milestoneViews)})
+        future.remove(milestoneViews)
+        print(milestoneViews)
+        print(future)
     else:
         milestoneDate(milestoneViews)
