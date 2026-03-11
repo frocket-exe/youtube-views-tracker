@@ -149,6 +149,5 @@ def pastMilestoneDate(milestone):
 for milestoneViews in future:
     if total >= milestoneViews:
         past.update({milestoneViews : pastMilestoneDate(milestoneViews)})
-        future.remove(milestoneViews)
     else:
         milestoneDate(milestoneViews)
