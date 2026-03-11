@@ -172,7 +172,7 @@ json_data = {
     "future":future
 }
 
-with open("milestones.json", "w") as f:
-    json.dump(json_data, f, indent=2)
+with open("milestones.json", "w") as g:
+    json.dump(json_data, g, indent=2)
 
 print(f"\n Uploaded {json_data} to json")
