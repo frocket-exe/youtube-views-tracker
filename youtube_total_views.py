@@ -96,7 +96,6 @@ with open("views.json", "w") as f:
         "main":json_main,
         "estimation":json_est
     }, f, indent=2)
-f.close()
 
 
 print(f"\nTotal Views: {total:,}")
@@ -132,7 +131,6 @@ with open("milestones.json") as f:
     json_data = json.load(f)
     past = json_data["past"]
     future = json_data["future"]
-f.close()
 
 def milestoneDate(milestone):
     viewsToGet = milestone-total
@@ -152,7 +150,7 @@ def pastMilestoneDate(milestone):
 
 for milestoneViews in [i for i in future]:
     if total >= milestoneViews:
-        past.update({milestoneViews : pastMilestoneDate(milestoneViews)})
+        past.update({str(f"{milestoneViews:,}") : pastMilestoneDate(milestoneViews)})
         future.remove(milestoneViews)
     else:
         milestoneDate(milestoneViews)
@@ -163,10 +161,6 @@ json_data = {
 }
 
 with open("milestones.json", "w") as f:
-    json.dump({
-        "main":json_main,
-        "estimation":json_est
-    }, f, indent=2)
-f.close()
+    json.dump(json_data, f, indent=2)
 
 print(f"\n Uploaded {json_data} to json")
