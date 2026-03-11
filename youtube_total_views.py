@@ -132,6 +132,7 @@ with open("milestones.json") as f:
     json_data = json.load(f)
     past = json_data["past"]
     future = json_data["future"]
+f.close()
 
 def milestoneDate(milestone):
     viewsToGet = milestone-total
