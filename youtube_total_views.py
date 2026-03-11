@@ -162,7 +162,10 @@ json_data = {
 }
 
 with open("milestones.json", "w") as f:
-    json.dump(json_data, f, indent=2)
+    json.dump({
+        "main":json_main,
+        "estimation":json_est
+    }, f, indent=2)
 f.close()
 
 print(f"\n Uploaded {json_data} to json")
