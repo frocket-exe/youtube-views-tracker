@@ -79,6 +79,25 @@ if __name__ == "__main__":
     sorted_vpsList = sorted(vpsList)
     calcVps = sorted_vpsList[1] 
 
+
+json_main = {
+    "total_views": total,
+    "video_count": noOfVids,
+    "timestamp": timeString
+}
+
+json_est = {
+    "calc_vps":calcVps,
+    "vps_history":vpsList
+}
+
+with open("views.json", "w") as f:
+    json.dump({
+        "main":json_main,
+        "estimation":json_est
+    }, f, indent=2)
+
+
 print(f"\nTotal Views: {total:,}")
 print(f"across {noOfVids:,} different videos")
 print(f"as of {timeString}")
@@ -119,20 +138,3 @@ print(f"{milestoneDate(15000000)}")
 print(f"{milestoneDate(16000000)}")
 print(f"{milestoneDate(17500000)}")
 print(f"{milestoneDate(20000000)}")
-
-json_main = {
-    "total_views": total,
-    "video_count": noOfVids,
-    "timestamp": timeString
-}
-
-json_est = {
-    "calc_vps":calcVps,
-    "vps_history":vpsList
-}
-
-with open("views.json", "w") as f:
-    json.dump({
-        "main":json_main,
-        "estimation":json_est
-    }, f, indent=2)
