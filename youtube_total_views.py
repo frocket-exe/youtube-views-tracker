@@ -132,11 +132,6 @@ with open("milestones.json") as f:
     past = json_data["past"]
     future = json_data["future"]
 
-print(past)
-print(type(past))
-print(future)
-print(type(future))
-
 def milestoneDate(milestone):
     viewsToGet = milestone-total
     daysLeft = viewsToGet/viewsPerDay
@@ -147,6 +142,6 @@ def milestoneDate(milestone):
 def pastMilestoneDate(milestone):
     overBy = total-milestone
     secondsSince = overBy/viewsPerSecond
-    print("\nAchieved milestone {secondsSince:,} seconds ago.")
+    print(f"\nAchieved milestone {secondsSince:,} seconds ago.")
 
 pastMilestoneDate(14617500)
