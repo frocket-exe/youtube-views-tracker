@@ -65,19 +65,19 @@ def secondsBetween(t1, t2):
     roundSeconds = floor(seconds)
     return roundSeconds
 
-if __name__ == "__main__":
-    ids = get_video_ids(PLAYLIST_ID)
-    total, noOfVids = get_total_views(ids)
-    
-    viewChange = total-prevViews
-    current_time = datetime.now()
-    timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
-    updateInterval = secondsBetween(prevTime, current_time)
-    viewsPerSecond = round((viewChange/updateInterval), 4)
-    vpsList.pop(0)
-    vpsList.append(viewsPerSecond)
-    sorted_vpsList = sorted(vpsList)
-    calcVps = sorted_vpsList[1] 
+ids = get_video_ids(PLAYLIST_ID)
+total, noOfVids = get_total_views(ids)
+
+viewChange = total-prevViews
+current_time = datetime.now()
+timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
+updateInterval = secondsBetween(prevTime, current_time)
+viewsPerSecond = round((viewChange/updateInterval), 4)
+
+vpsList.pop(0)
+vpsList.append(viewsPerSecond)
+sorted_vpsList = sorted(vpsList)
+calcVps = sorted_vpsList[1] 
 
 
 json_main = {
@@ -121,9 +121,9 @@ print(f"Calculated VPS is {calcVps}")
 prevYearViews = 13964150
 jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
 daysThisYear = int(secondsBetween(jan1, current_time)/86400)
-print(f"\n{daysThisYear} days this year")
+print(f"\n{daysThisYear} days this year so far")
 viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
-print(f"{viewsPerDay:,} views per day")
+print(f"{viewsPerDay:,} views per day mean")
 estEnd = prevYearViews + (365*viewsPerDay)
 print(f"{estEnd:,} views by the end of the year\n")
 
