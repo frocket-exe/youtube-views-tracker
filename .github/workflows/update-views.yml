@@ -1,12 +1,12 @@
 name: Update YouTube Views
 
 permissions:
-  contents: write  # ✅ allows Actions to push to the repo
+  contents: write
 
 on:
   schedule:
     - cron: "*/10 * * * *"  # runs every 10 minutes
-  workflow_dispatch:       # allows manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   update:
@@ -35,7 +35,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add views.json
-          git commit -m "Update view count" || echo "No changes to commit"
+          git add milestones.json
+          VIEWS=$(python -c "import json; print(json.load(open('views.json'))['main']['total_views'])")
+          git commit -m "Update views → $VIEWS" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

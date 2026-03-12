@@ -65,61 +65,20 @@ def secondsBetween(t1, t2):
     roundSeconds = floor(seconds)
     return roundSeconds
 
-if __name__ == "__main__":
-    ids = get_video_ids(PLAYLIST_ID)
-    total, noOfVids = get_total_views(ids)
-    
-    viewChange = total-prevViews
-    current_time = datetime.now()
-    timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
-    updateInterval = secondsBetween(prevTime, current_time)
-    viewsPerSecond = round((viewChange/updateInterval), 4)
-    vpsList.pop(0)
-    vpsList.append(viewsPerSecond)
-    sorted_vpsList = sorted(vpsList)
+ids = get_video_ids(PLAYLIST_ID)
+total, noOfVids = get_total_views(ids)
 
-    calcVps = sorted_vpsList[1]
+viewChange = total-prevViews
+current_time = datetime.now()
+timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
+updateInterval = secondsBetween(prevTime, current_time)
+viewsPerSecond = round((viewChange/updateInterval), 4)
 
-    print(f"\nTotal Views: {total:,}")
-    print(f"across {noOfVids:,} different videos")
-    print(f"as of {timeString}")
+vpsList.pop(0)
+vpsList.append(viewsPerSecond)
+sorted_vpsList = sorted(vpsList)
+calcVps = sorted_vpsList[1] 
 
-    print(f"\n{viewChange:,} new views since last update")
-    print(f"{updateInterval:,} seconds since last update", end=" ")
-    if updateInterval > 60:
-        hoursInt = floor(updateInterval/(60*60))
-        minutesInt = floor(updateInterval/60)-60*hoursInt
-        secondsInt = floor(updateInterval%60)
-        print("(", end="")
-        if hoursInt > 0:
-            print(f"{hoursInt}h, ", end="")
-        print(f"{minutesInt}m and {secondsInt}s)")
-    print(f"averaged {viewsPerSecond:,} views per second")
-
-    print(f"\nLast 8 VPSs: {vpsList}")
-    print(f"Sorted list of VPSs: {sorted_vpsList}")
-    print(f"Calculated VPS is {calcVps}")
-
-    prevYearViews = 13964150
-    jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
-    daysThisYear = int(secondsBetween(jan1, current_time)/86400)
-    print(f"\n{daysThisYear} days this year")
-    viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
-    print(f"{viewsPerDay:,} views per day")
-    estEnd = prevYearViews + (365*viewsPerDay)
-    print(f"{estEnd:,} views by the end of the year\n")
-
-    def milestoneDate(milestone):
-        viewsToGet = milestone-total
-        daysLeft = viewsToGet/viewsPerDay
-        milestoneDay = current_time + timedelta(days=daysLeft)
-        milestoneDay = milestoneDay.strftime("%d/%m/%Y")
-        return (f"Will achieve {milestone:,} views on {milestoneDay}")
-    
-    print(f"{milestoneDate(15000000)}")
-    print(f"{milestoneDate(16000000)}")
-    print(f"{milestoneDate(17500000)}")
-    print(f"{milestoneDate(20000000)}")
 
 json_main = {
     "total_views": total,
@@ -137,3 +96,67 @@ with open("views.json", "w") as f:
         "main":json_main,
         "estimation":json_est
     }, f, indent=2)
+
+
+print(f"\nTotal Views: {total:,}")
+print(f"across {noOfVids:,} different videos")
+print(f"as of {timeString}")
+
+print(f"\n{viewChange:,} new views since last update")
+print(f"{updateInterval:,} seconds since last update", end=" ")
+if updateInterval > 60:
+    hoursInt = floor(updateInterval/(60*60))
+    minutesInt = floor(updateInterval/60)-60*hoursInt
+    secondsInt = floor(updateInterval%60)
+    print("(", end="")
+    if hoursInt > 0:
+        print(f"{hoursInt}h, ", end="")
+    print(f"{minutesInt}m and {secondsInt}s)")
+print(f"averaged {viewsPerSecond:,} views per second")
+
+print(f"\nLast 8 VPSs: {vpsList}")
+print(f"Sorted list of VPSs: {sorted_vpsList}")
+print(f"Calculated VPS is {calcVps}")
+
+prevYearViews = 13964150
+jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
+daysThisYear = int(secondsBetween(jan1, current_time)/86400)
+print(f"\n{daysThisYear} days this year so far")
+viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
+print(f"{viewsPerDay:,} views per day mean")
+estEnd = prevYearViews + (365*viewsPerDay)
+print(f"{estEnd:,} views by the end of the year\n")
+
+with open("milestones.json") as f:
+    json_data = json.load(f)
+    past = json_data["past"]
+    future = json_data["future"]
+
+def milestoneDate(milestone):
+    viewsToGet = milestone-total
+    daysLeft = viewsToGet/viewsPerDay
+    milestoneDay = current_time + timedelta(days=daysLeft)
+    milestoneDay = milestoneDay.strftime("%d/%m/%Y")
+    print(f"Will achieve {milestone:,} views on {milestoneDay}")
+    return milestoneDay
+
+def pastMilestoneDate(milestone):
+    overBy = total-milestone
+    secondsSince = floor(overBy/viewsPerSecond)
+    milestoneTimestamp = current_time - timedelta(seconds=secondsSince)
+    milestoneTimestamp = milestoneTimestamp.strftime("%d/%m/%Y, %H:%M")
+    print(f"Achieved {milestone:,} at {milestoneTimestamp}")
+    return milestoneTimestamp
+
+for milestoneViews in [i for i in future]:
+    if total >= milestoneViews:
+        past.update({str(f"{milestoneViews:,}") : pastMilestoneDate(milestoneViews)})
+        future.remove(milestoneViews)
+    else:
+        milestoneDate(milestoneViews)
+
+with open("milestones.json", "w") as f:
+    json.dump({
+    "past":past,
+    "future":future
+}, f, indent=2)
