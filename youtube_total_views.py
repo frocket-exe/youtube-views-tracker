@@ -132,9 +132,20 @@ with open("milestones.json") as f:
     past = json_data["past"]
     future = json_data["future"]
 
+def email(achieved, milestone, time):
+    if achieved:
+        emailBody = (f"\nYou achieved {milestone:,} views on {time}\n")
+    else:
+        emailBody = (f"\nYou will achieve {milestone:,} views in {time} minutes\n")
+    print(emailBody)
+
 def milestoneDate(milestone):
     viewsToGet = milestone-total
     daysLeft = viewsToGet/viewsPerDay
+    if daysLeft <= 1:
+        minutesLeft = floor(viewsToGet/(calcVps*60))
+        if minutesLeft < 30:
+            email(False, milestone, minutesLeft)
     milestoneDay = current_time + timedelta(days=daysLeft)
     milestoneDay = milestoneDay.strftime("%d/%m/%Y")
     print(f"Will achieve {milestone:,} views on {milestoneDay}")
@@ -146,6 +157,7 @@ def pastMilestoneDate(milestone):
     milestoneTimestamp = current_time - timedelta(seconds=secondsSince)
     milestoneTimestamp = milestoneTimestamp.strftime("%d/%m/%Y, %H:%M")
     print(f"Achieved {milestone:,} at {milestoneTimestamp}")
+    email(True, milestone, milestoneTimestamp)
     return milestoneTimestamp
 
 for milestoneViews in [i for i in future]:
