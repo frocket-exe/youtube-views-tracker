@@ -1,8 +1,9 @@
 from googleapiclient.discovery import build
 import json
 import os
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta
 from math import floor
+from email_send import email
 
 API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
@@ -131,16 +132,6 @@ with open("milestones.json") as f:
     json_data = json.load(f)
     past = json_data["past"]
     future = json_data["future"]
-
-def email(achieved, milestone, time):
-    if achieved:
-        emailBody = (f"\nYou achieved {milestone:,} views on {time}\n")
-        emailSubject = (f"Achieved milestone - {milestone:,}")
-    else:
-        emailBody = (f"\nYou will achieve {milestone:,} views in {time} minutes\n")
-        emailSubject = (f"Upcoming milestone - {milestone:,}")
-    print(emailSubject)
-    print(emailBody)
 
 def milestoneDate(milestone):
     viewsToGet = milestone-total
