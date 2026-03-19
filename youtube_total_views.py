@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime, timedelta
 from math import floor
-from email_send import email
+from milestone_email import email
 
 API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
