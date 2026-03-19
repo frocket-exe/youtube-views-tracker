@@ -1,4 +1,5 @@
 import os
+import smtplib
 
 def email(achieved, milestone, time):
     senderEmail = os.getenv("SEND_EMAIL")
