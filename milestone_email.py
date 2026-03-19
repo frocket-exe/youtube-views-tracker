@@ -1,3 +1,5 @@
+import os
+
 def email(achieved, milestone, time):
     senderEmail = os.getenv("SEND_EMAIL")
     loginEmail = os.getenv("LOGIN_EMAIL")
