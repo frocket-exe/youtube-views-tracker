@@ -1,8 +1,8 @@
 def email(achieved, milestone, time):
-    senderEmail = os.getenv("sendEmail")
-    loginEmail = os.getenv("loginEmail")
-    senderPassword = os.getenv("senderPW")
-    receiverEmail = os.getenv("receiveEmail")
+    senderEmail = os.getenv("SEND_EMAIL")
+    loginEmail = os.getenv("LOGIN_EMAIL")
+    senderPassword = os.getenv("SEND_PW")
+    receiverEmail = os.getenv("RECEIVE_EMAIL")
 
     if achieved:
         emailBody = (f"\nYou achieved {milestone:,} views on {time}\n")
