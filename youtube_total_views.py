@@ -1,8 +1,9 @@
 from googleapiclient.discovery import build
 import json
 import os
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta
 from math import floor
+from milestone_email import email
 
 API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
@@ -135,6 +136,10 @@ with open("milestones.json") as f:
 def milestoneDate(milestone):
     viewsToGet = milestone-total
     daysLeft = viewsToGet/viewsPerDay
+    if daysLeft <= 1:
+        minutesLeft = floor(viewsToGet/(calcVps*60))
+        if minutesLeft < 30:
+            email(False, milestone, minutesLeft)
     milestoneDay = current_time + timedelta(days=daysLeft)
     milestoneDay = milestoneDay.strftime("%d/%m/%Y")
     print(f"Will achieve {milestone:,} views on {milestoneDay}")
@@ -146,6 +151,7 @@ def pastMilestoneDate(milestone):
     milestoneTimestamp = current_time - timedelta(seconds=secondsSince)
     milestoneTimestamp = milestoneTimestamp.strftime("%d/%m/%Y, %H:%M")
     print(f"Achieved {milestone:,} at {milestoneTimestamp}")
+    email(True, milestone, milestoneTimestamp)
     return milestoneTimestamp
 
 for milestoneViews in [i for i in future]:
