@@ -122,7 +122,6 @@ print(f"Calculated VPS is {calcVps}")
 prevYearViews = 13964150
 jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
 daysThisYear = int(secondsBetween(jan1, current_time)/86400)
-print(f"\n{daysThisYear} days this year so far")
 viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
 print(f"{viewsPerDay:,} views per day mean")
 estEnd = prevYearViews + (365*viewsPerDay)
@@ -140,6 +139,7 @@ def milestoneDate(milestone):
         minutesLeft = floor(viewsToGet/(calcVps*60))
         if minutesLeft < 30:
             email(False, milestone, minutesLeft)
+            print("Email sent - upcoming\n")
     milestoneDay = current_time + timedelta(days=daysLeft)
     milestoneDay = milestoneDay.strftime("%d/%m/%Y")
     print(f"Will achieve {milestone:,} views on {milestoneDay}")
@@ -152,6 +152,7 @@ def pastMilestoneDate(milestone):
     milestoneTimestamp = milestoneTimestamp.strftime("%d/%m/%Y, %H:%M")
     print(f"Achieved {milestone:,} at {milestoneTimestamp}")
     email(True, milestone, milestoneTimestamp)
+    print("Email sent - achieved\n")
     return milestoneTimestamp
 
 for milestoneViews in [i for i in future]:
@@ -160,6 +161,8 @@ for milestoneViews in [i for i in future]:
         future.remove(milestoneViews)
     else:
         milestoneDate(milestoneViews)
+
+print()
 
 with open("milestones.json", "w") as f:
     json.dump({
