@@ -123,7 +123,7 @@ prevYearViews = 13964150
 jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
 daysThisYear = int(secondsBetween(jan1, current_time)/86400)
 viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
-print(f"{viewsPerDay:,} views per day mean")
+print(f"\n{viewsPerDay:,} views per day mean")
 estEnd = prevYearViews + (365*viewsPerDay)
 print(f"{estEnd:,} views by the end of the year\n")
 
