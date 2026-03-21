@@ -135,9 +135,10 @@ with open("milestones.json") as f:
 def milestoneDate(milestone):
     viewsToGet = milestone-total
     daysLeft = viewsToGet/viewsPerDay
+    minEmailTime = 60
     if daysLeft <= 1:
         minutesLeft = floor(viewsToGet/(calcVps*60))
-        if minutesLeft < 30:
+        if minutesLeft < minEmailTime:
             email(False, milestone, minutesLeft)
             print("Email sent - upcoming\n")
     milestoneDay = current_time + timedelta(days=daysLeft)
