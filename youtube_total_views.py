@@ -4,6 +4,7 @@ import os
 from datetime import datetime, timedelta
 from math import floor
 from milestone_email import email
+from pytz import timezone
 
 API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = "PLji0kmxsfSDxyn9ctLCg4wFPMypje5GjC"
@@ -71,7 +72,10 @@ total, noOfVids = get_total_views(ids)
 
 viewChange = total-prevViews
 current_time = datetime.now()
+tz = timezone('Europe/London')
+local_time = tz.localize(current_time)
 timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
+localTimeString = local_time.strftime("%d/%m/%Y, %H:%M:%S")
 updateInterval = secondsBetween(prevTime, current_time)
 viewsPerSecond = round((viewChange/updateInterval), 4)
 
@@ -141,7 +145,7 @@ def milestoneDate(milestone):
         if minutesLeft < maxEmailTime:
             email(False, milestone, minutesLeft)
             print("Email sent - upcoming\n")
-    milestoneDay = current_time + timedelta(days=daysLeft)
+    milestoneDay = local_time + timedelta(days=daysLeft)
     milestoneDay = milestoneDay.strftime("%d/%m/%Y")
     print(f"Will achieve {milestone:,} views on {milestoneDay}")
     return milestoneDay
@@ -149,7 +153,7 @@ def milestoneDate(milestone):
 def pastMilestoneDate(milestone):
     overBy = total-milestone
     secondsSince = floor(overBy/viewsPerSecond)
-    milestoneTimestamp = current_time - timedelta(seconds=secondsSince)
+    milestoneTimestamp = local_time - timedelta(seconds=secondsSince)
     milestoneTimestamp = milestoneTimestamp.strftime("%d/%m/%Y, %H:%M")
     print(f"Achieved {milestone:,} at {milestoneTimestamp}\n")
     email(True, milestone, milestoneTimestamp)
