@@ -71,9 +71,9 @@ ids = get_video_ids(PLAYLIST_ID)
 total, noOfVids = get_total_views(ids)
 
 viewChange = total-prevViews
+tz = timezone('Europe/London')
 current_time = datetime.now()
-tz = timezone('Australia/Melbourne')
-local_time = tz.localize(current_time)
+local_time = datetime.now(tz)
 timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
 localTimeString = local_time.strftime("%d/%m/%Y, %H:%M:%S")
 updateInterval = secondsBetween(prevTime, current_time)
