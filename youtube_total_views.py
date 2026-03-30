@@ -72,7 +72,7 @@ total, noOfVids = get_total_views(ids)
 
 viewChange = total-prevViews
 current_time = datetime.now()
-tz = timezone('Europe/London')
+tz = timezone('Australia/Melbourne')
 local_time = tz.localize(current_time)
 timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
 localTimeString = local_time.strftime("%d/%m/%Y, %H:%M:%S")
