@@ -105,7 +105,7 @@ with open("views.json", "w") as f:
 
 print(f"\nTotal Views: {total:,}")
 print(f"across {noOfVids:,} different videos")
-print(f"as of {timeString}")
+print(f"as of {localTimeString}")
 
 print(f"\n{viewChange:,} new views since last update")
 print(f"{updateInterval:,} seconds since last update", end=" ")
