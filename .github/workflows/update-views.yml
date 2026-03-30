@@ -23,6 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib
+          pip install pytz
 
       - name: Run script
         env:
