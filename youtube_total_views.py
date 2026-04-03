@@ -64,10 +64,10 @@ total, noOfVids = get_total_views(ids)
 
 viewChange = total-prevViews
 tz = timezone('Europe/London')
-current_time = datetime.now()
+current_time = datetime.now().timestamp()
 local_time = datetime.now(tz)
 localTimeString = local_time.strftime("%d/%m/%Y, %H:%M:%S")
-updateInterval = floor((current_time-prevTime)/1000)
+updateInterval = (current_time-prevTime)
 viewsPerSecond = round((viewChange/updateInterval), 4)
 
 vpsList.pop(0)
