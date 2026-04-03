@@ -115,7 +115,8 @@ print(f"Sorted list of VPSs: {sorted_vpsList}")
 print(f"Calculated VPS is {calcVps}")
 
 prevYearViews = 13964150
-jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
+year = 2026
+jan1 = int(datetime(year, 1, 1).timestamp())
 daysThisYear = int((current_time-jan1)/86400000)
 viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
 print(f"\n{viewsPerDay:,} views per day mean")
