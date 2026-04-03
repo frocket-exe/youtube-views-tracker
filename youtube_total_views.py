@@ -16,8 +16,6 @@ with open("views.json") as f:
     prevVPS = json_data["estimation"]["calc_vps"]
     vpsList = json_data["estimation"]["vps_history"]
 
-prevTime = datetime.strptime(prevTime, "%d/%m/%Y, %H:%M:%S")
-
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 def get_video_ids(playlist_id):
@@ -61,12 +59,6 @@ def get_total_views(video_ids):
 
     return total_views, unique_videos
 
-def secondsBetween(t1, t2):
-    timeDiff = t2 - t1
-    seconds = timedelta.total_seconds(timeDiff)
-    roundSeconds = floor(seconds)
-    return roundSeconds
-
 ids = get_video_ids(PLAYLIST_ID)
 total, noOfVids = get_total_views(ids)
 
@@ -74,9 +66,8 @@ viewChange = total-prevViews
 tz = timezone('Europe/London')
 current_time = datetime.now()
 local_time = datetime.now(tz)
-timeString = current_time.strftime("%d/%m/%Y, %H:%M:%S")
 localTimeString = local_time.strftime("%d/%m/%Y, %H:%M:%S")
-updateInterval = secondsBetween(prevTime, current_time)
+updateInterval = floor((current_time-prevTime)/1000)
 viewsPerSecond = round((viewChange/updateInterval), 4)
 
 vpsList.pop(0)
@@ -88,7 +79,7 @@ calcVps = sorted_vpsList[1]
 json_main = {
     "total_views": total,
     "video_count": noOfVids,
-    "timestamp": timeString
+    "timestamp": current_time
 }
 
 json_est = {
@@ -125,7 +116,7 @@ print(f"Calculated VPS is {calcVps}")
 
 prevYearViews = 13964150
 jan1 = datetime.strptime("01/01/2026", "%d/%m/%Y")
-daysThisYear = int(secondsBetween(jan1, current_time)/86400)
+daysThisYear = int((current_time-jan1)/86400000)
 viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
 print(f"\n{viewsPerDay:,} views per day mean")
 estEnd = prevYearViews + (365*viewsPerDay)
