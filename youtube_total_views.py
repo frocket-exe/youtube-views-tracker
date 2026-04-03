@@ -100,7 +100,14 @@ print(f"as of {localTimeString}")
 
 print(f"\n{viewChange:,} new views since last update")
 print(f"{updateInterval:,} seconds since last update", end=" ")
-print(updateInterval.strftime("(%Hh, %Mm and %Ss)"))
+if updateInterval > 60:
+    hoursInt = floor(updateInterval/(60*60))
+    minutesInt = floor(updateInterval/60)-60*hoursInt
+    secondsInt = floor(updateInterval%60)
+    print("(", end="")
+    if hoursInt > 0:
+        print(f"{hoursInt}h, ", end="")
+    print(f"{minutesInt}m and {secondsInt}s)")
 print(f"averaged {viewsPerSecond:,} views per second")
 
 print(f"\nLast 8 VPSs: {vpsList}")
@@ -124,10 +131,10 @@ with open("milestones.json") as f:
 def milestoneDate(milestone):
     viewsToGet = milestone-total
     daysLeft = viewsToGet/viewsPerDay
-    maxEmailTime = 60
+    maxEmailTime = 120
     if daysLeft <= 1:
         minutesLeft = floor(viewsToGet/(viewsPerSecond*60))
-        if minutesLeft < maxEmailTime:
+        if minutesLeft <= maxEmailTime:
             email(False, milestone, minutesLeft)
             print("Email sent - upcoming\n")
     milestoneDay = local_time + timedelta(days=daysLeft)
