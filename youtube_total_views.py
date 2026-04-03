@@ -100,14 +100,7 @@ print(f"as of {localTimeString}")
 
 print(f"\n{viewChange:,} new views since last update")
 print(f"{updateInterval:,} seconds since last update", end=" ")
-if updateInterval > 60:
-    hoursInt = floor(updateInterval/(60*60))
-    minutesInt = floor(updateInterval/60)-60*hoursInt
-    secondsInt = floor(updateInterval%60)
-    print("(", end="")
-    if hoursInt > 0:
-        print(f"{hoursInt}h, ", end="")
-    print(f"{minutesInt}m and {secondsInt}s)")
+print(updateInterval.strftime("(%Hh, %Mm and %Ss)"))
 print(f"averaged {viewsPerSecond:,} views per second")
 
 print(f"\nLast 8 VPSs: {vpsList}")
