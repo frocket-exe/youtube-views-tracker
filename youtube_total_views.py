@@ -64,7 +64,7 @@ total, noOfVids = get_total_views(ids)
 
 viewChange = total-prevViews
 tz = timezone('Europe/London')
-current_time = datetime.now().timestamp()
+current_time = int(datetime.now().timestamp())
 local_time = datetime.now(tz)
 localTimeString = local_time.strftime("%d/%m/%Y, %H:%M:%S")
 updateInterval = (current_time-prevTime)
