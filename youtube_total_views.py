@@ -141,7 +141,7 @@ def milestoneDate(milestone):
         print("Email sent - upcoming\n")
     milestoneDay = local_time + timedelta(minutes = minsLeft)
     milestoneDay = milestoneDay.strftime("%d/%m/%Y %H:%M")
-    print(f"Will achieve {milestone:,} views on {milestoneDay}")
+    print(f"{milestone:,} views  -  {milestoneDay}")
 
 def pastMilestoneDate(milestone):
     overBy = total-milestone
@@ -153,6 +153,7 @@ def pastMilestoneDate(milestone):
     print("Email sent - achieved\n")
     return milestoneTimestamp
 
+print("Upcoming Milestones:")
 for milestoneViews in [i for i in future]:
     if total >= milestoneViews:
         past.update({str(f"{milestoneViews:,}") : pastMilestoneDate(milestoneViews)})
