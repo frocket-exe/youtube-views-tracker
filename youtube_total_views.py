@@ -13,7 +13,6 @@ with open("views.json") as f:
     json_data = json.load(f)
     prevViews = json_data["main"]["total_views"]
     prevTime = json_data["main"]["timestamp"]
-    prevVPS = json_data["estimation"]["calc_vps"]
     vpsList = json_data["estimation"]["vps_history"]
 
 youtube = build('youtube', 'v3', developerKey=API_KEY)
@@ -70,9 +69,10 @@ localTimeString = local_time.strftime("%d/%m/%Y, %H:%M:%S")
 updateInterval = (current_time-prevTime)
 viewsPerSecond = round((viewChange/updateInterval), 4)
 
-vpsList.pop(0)
-vpsList.append(viewsPerSecond)
-sorted_vpsList = sorted(vpsList)
+if viewsPerSecond > 0:
+    vpsList.pop(0)
+    vpsList.append(viewsPerSecond)
+    sorted_vpsList = sorted(vpsList)
 calcVps = sorted_vpsList[1] 
 
 
@@ -131,10 +131,10 @@ with open("milestones.json") as f:
 def milestoneDate(milestone):
     viewsToGet = milestone-total
     daysLeft = viewsToGet/viewsPerDay
-    maxEmailTime = 120
+    maxEmailTime = 60
     if daysLeft <= 1:
         minutesLeft = floor(viewsToGet/(viewsPerSecond*60))
-        if minutesLeft <= maxEmailTime:
+        if minutesLeft < maxEmailTime:
             email(False, milestone, minutesLeft)
             print("Email sent - upcoming\n")
     milestoneDay = local_time + timedelta(days=daysLeft)
