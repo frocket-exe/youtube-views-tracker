@@ -122,8 +122,8 @@ secsThisYear = current_time-jan1
 meanVPS = (total-prevYearViews)/secsThisYear
 viewsPerDay = floor(meanVPS*60*60*24)
 print(f"\n{meanVPS:,} views per second mean")
-print(f"\n{viewsPerDay:,} views per day mean")
-estEnd = (dec31-current_time)*meanVPS+total
+print(f"{viewsPerDay:,} views per day mean")
+estEnd = floor((dec31-current_time)*meanVPS+total)
 print(f"{estEnd:,} views by the end of the year\n")
 
 with open("milestones.json") as f:
