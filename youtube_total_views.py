@@ -108,19 +108,22 @@ if updateInterval > 60:
     if hoursInt > 0:
         print(f"{hoursInt}h, ", end="")
     print(f"{minutesInt}m and {secondsInt}s)")
+else:
+    print()
 print(f"averaged {viewsPerSecond:,} views per second")
 
 print(f"\nLast 8 VPSs: {vpsList}")
-print(f"Sorted list of VPSs: {sorted_vpsList}")
-print(f"Calculated VPS is {calcVps}")
+print(f"Sorted VPSs: {sorted_vpsList}")
+print(f"Calculation VPS is {calcVps}")
 
 prevYearViews = 13964150
 year = 2026
 jan1 = int(datetime(year, 1, 1).timestamp())
 dec31 = int(datetime(year, 12, 31, 23, 59, 59).timestamp())
 secsThisYear = current_time-jan1
-meanVPS = round((total-prevYearViews)/secsThisYear, 4)
+meanVPS = (total-prevYearViews)/secsThisYear
 viewsPerDay = floor(meanVPS*60*60*24)
+meanVPS = round(meanVPS, 4)
 print(f"\n{meanVPS:,} views per second mean")
 print(f"{viewsPerDay:,} views per day mean")
 estEnd = floor((dec31-current_time)*meanVPS+total)
@@ -135,12 +138,12 @@ def milestoneDate(milestone):
     viewsToGet = milestone-total
     secsLeft = viewsToGet/meanVPS
     minsLeft = round(secsLeft/60)
-    maxEmailTime = 60
+    maxEmailTime = 120
     if secsLeft <= 60*maxEmailTime:
         email(False, milestone, minsLeft)
         print("Email sent - upcoming\n")
     milestoneDay = local_time + timedelta(minutes = minsLeft)
-    milestoneDay = milestoneDay.strftime("%d/%m/%Y %H:%M")
+    milestoneDay = milestoneDay.strftime("%d/%m/%Y   %H:%M")
     print(f"{milestone:,} views  -  {milestoneDay}")
 
 def pastMilestoneDate(milestone):
