@@ -118,11 +118,12 @@ prevYearViews = 13964150
 year = 2026
 jan1 = int(datetime(year, 1, 1).timestamp())
 dec31 = int(datetime(year, 12, 31, 23, 59, 59).timestamp())
-print(dec31)
-daysThisYear = int((current_time-jan1)/86400)
-viewsPerDay = (floor((total-prevYearViews)/daysThisYear))
+secsThisYear = current_time-jan1
+meanVPS = (total-prevYearViews)/secsThisYear
+viewsPerDay = floor(meanVPS*60*60*24)
+print(f"\n{meanVPS:,} views per second mean")
 print(f"\n{viewsPerDay:,} views per day mean")
-estEnd = prevYearViews + (365*viewsPerDay)
+estEnd = (dec31-current_time)*meanVPS+total
 print(f"{estEnd:,} views by the end of the year\n")
 
 with open("milestones.json") as f:
