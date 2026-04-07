@@ -133,17 +133,15 @@ with open("milestones.json") as f:
 
 def milestoneDate(milestone):
     viewsToGet = milestone-total
-    daysLeft = viewsToGet/viewsPerDay
+    secsLeft = viewsToGet/meanVPS
+    minsLeft = round(secsLeft/60)
     maxEmailTime = 60
-    if daysLeft <= 1:
-        minutesLeft = floor(viewsToGet/(viewsPerSecond*60))
-        if minutesLeft < maxEmailTime:
-            email(False, milestone, minutesLeft)
-            print("Email sent - upcoming\n")
-    milestoneDay = local_time + timedelta(days=daysLeft)
-    milestoneDay = milestoneDay.strftime("%d/%m/%Y")
+    if secsLeft <= 60*maxEmailTime:
+        email(False, milestone, minsLeft)
+        print("Email sent - upcoming\n")
+    milestoneDay = local_time + timedelta(minutes = minsLeft)
+    milestoneDay = milestoneDay.strftime("%d/%m/%Y %H:%M")
     print(f"Will achieve {milestone:,} views on {milestoneDay}")
-    return milestoneDay
 
 def pastMilestoneDate(milestone):
     overBy = total-milestone
