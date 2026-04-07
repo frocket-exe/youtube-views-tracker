@@ -72,7 +72,7 @@ viewsPerSecond = round((viewChange/updateInterval), 4)
 if viewsPerSecond > 0:
     vpsList.pop(0)
     vpsList.append(viewsPerSecond)
-    sorted_vpsList = sorted(vpsList)
+sorted_vpsList = sorted(vpsList)
 calcVps = sorted_vpsList[1] 
 
 
