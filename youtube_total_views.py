@@ -117,7 +117,7 @@ print(f"Sorted VPSs: {sorted_vpsList}")
 print(f"Calculation VPS is {calcVps}")
 
 currentYear = (datetime.now()).strftime("%Y")
-prevYear = str(int(currentYear-1))
+prevYear = str(int(currentYear)-1)
 
 print(currentYear)
 print(prevYear)
@@ -127,9 +127,8 @@ print(prevYear)
 #     prevViews = json_data["main"]["total_views"]
 
 prevYearViews = 13964150
-year = 2026
-jan1 = int(datetime(year, 1, 1).timestamp())
-dec31 = int(datetime(year, 12, 31, 23, 59, 59).timestamp())
+jan1 = int(datetime(currentYear, 1, 1).timestamp())
+dec31 = int(datetime(currentYear, 12, 31, 23, 59, 59).timestamp())
 secsThisYear = current_time-jan1
 meanVPS = (total-prevYearViews)/secsThisYear
 viewsPerDay = floor(meanVPS*60*60*24)
