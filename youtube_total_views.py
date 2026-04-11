@@ -135,6 +135,7 @@ with open("yearStartViews.json") as f:
         print("Year not in JSON")
         jan1Views = calcJan1Views(currentYear)
         json_data.update({str(currentYear): str(jan1Views)})
+        f.close()
         with open("yearStartViews.json", "w") as f:
             json.dump(json_data, f, indent=2)
             print("Year added to JSON")
