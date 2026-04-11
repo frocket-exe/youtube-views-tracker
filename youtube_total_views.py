@@ -123,7 +123,7 @@ print(currentYear)
 def calcJan1Views(year):
     jan1 = int(datetime(year, 1, 1).timestamp())
     secondsSinceJan1 = current_time - jan1
-    jan1Views = total - (calcVps*secondsSinceJan1)
+    jan1Views = floor(total - (calcVps*secondsSinceJan1))
     return jan1Views
 
 with open("yearStartViews.json") as f:
@@ -138,8 +138,8 @@ f.close()
 if yearNotInJson:
     print("Year not in JSON")
     jan1Views = calcJan1Views(currentYear)
-    json_data.update({str(currentYear): str(jan1Views)})
-    with open("yearStartViews.json") as f:
+    json_data.update({str(currentYear): jan1Views})
+    with open("yearStartViews.json", "w") as f:
         print(json_data)
         json.dump(json_data, f, indent=2)
         print("Year added to JSON")
