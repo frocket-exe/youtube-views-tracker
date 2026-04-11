@@ -116,17 +116,27 @@ print(f"\nLast 8 VPSs: {vpsList}")
 print(f"Sorted VPSs: {sorted_vpsList}")
 print(f"Calculation VPS is {calcVps}")
 
-currentYear = (datetime.now()).strftime("%Y")
-prevYear = str(int(currentYear)-1)
+currentYear = int((datetime.now()).strftime("%Y"))
 
 print(currentYear)
-print(prevYear)
 
-# with open("yearStartViews.json") as f:
-#     json_data = json.load(f)
-#     prevViews = json_data["main"]["total_views"]
+def calcJan1Views(year):
+    jan1 = int(datetime(year, 1, 1).timestamp())
+    secondsSinceJan1 = current_time - jan1
+    jan1Views = total - (calcVps*secondsSinceJan1)
+    return jan1Views
 
-prevYearViews = 13964150
+with open("yearStartViews.json") as f:
+    json_data = json.load(f)
+    try:
+        prevYearViews = json_data[str(currentYear)]
+    except:
+        jan1Views = calcJan1Views(currentYear)
+        json_data.update({str(currentYear): str(jan1Views)})
+        with open("yearStartViews.json", "w") as f:
+            json.dump(json_data, f, indent=2)
+            prevYearViews = jan1Views
+
 jan1 = int(datetime(currentYear, 1, 1).timestamp())
 dec31 = int(datetime(currentYear, 12, 31, 23, 59, 59).timestamp())
 secsThisYear = current_time-jan1
