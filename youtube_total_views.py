@@ -116,6 +116,16 @@ print(f"\nLast 8 VPSs: {vpsList}")
 print(f"Sorted VPSs: {sorted_vpsList}")
 print(f"Calculation VPS is {calcVps}")
 
+currentYear = (datetime.now()).strftime("%Y")
+prevYear = str(int(currentYear-1))
+
+print(currentYear)
+print(prevYear)
+
+# with open("yearStartViews.json") as f:
+#     json_data = json.load(f)
+#     prevViews = json_data["main"]["total_views"]
+
 prevYearViews = 13964150
 year = 2026
 jan1 = int(datetime(year, 1, 1).timestamp())
