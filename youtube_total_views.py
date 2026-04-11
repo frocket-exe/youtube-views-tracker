@@ -129,12 +129,15 @@ def calcJan1Views(year):
 with open("yearStartViews.json") as f:
     json_data = json.load(f)
     try:
+        print("Year in JSON")
         prevYearViews = json_data[str(currentYear)]
     except:
+        print("Year not in JSON")
         jan1Views = calcJan1Views(currentYear)
         json_data.update({str(currentYear): str(jan1Views)})
         with open("yearStartViews.json", "w") as f:
             json.dump(json_data, f, indent=2)
+            print("Year added to JSON")
             prevYearViews = jan1Views
 
 jan1 = int(datetime(currentYear, 1, 1).timestamp())
