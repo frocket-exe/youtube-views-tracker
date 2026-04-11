@@ -42,6 +42,7 @@ jobs:
           git add views.json
           git add milestones.json
           git add milestone_email.py
+          git add yearStartViews.json
           VIEWS=$(python -c "import json; print(json.load(open('views.json'))['main']['total_views'])")
           git commit -m "Update views → $VIEWS" || echo "No changes to commit"
           git push

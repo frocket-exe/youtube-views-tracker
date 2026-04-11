@@ -116,11 +116,27 @@ print(f"\nLast 8 VPSs: {vpsList}")
 print(f"Sorted VPSs: {sorted_vpsList}")
 print(f"Calculation VPS is {calcVps}")
 
-prevYearViews = 13964150
-year = 2026
-jan1 = int(datetime(year, 1, 1).timestamp())
-dec31 = int(datetime(year, 12, 31, 23, 59, 59).timestamp())
+currentYear = int((datetime.now()).strftime("%Y"))
+jan1 = int(datetime(currentYear, 1, 1).timestamp())
 secsThisYear = current_time-jan1
+
+def calcJan1Views(year):
+    jan1Views = floor(total - (calcVps*secsThisYear))
+    return jan1Views
+
+with open("yearStartViews.json") as f:
+    json_data = json.load(f)
+    try:
+        prevYearViews = json_data[str(currentYear)]
+    except:
+        jan1Views = calcJan1Views(currentYear)
+        json_data.update({str(currentYear): jan1Views})
+        with open("yearStartViews.json", "w") as f:
+            json.dump(json_data, f, indent=2)
+            prevYearViews = jan1Views
+f.close()
+
+dec31 = int(datetime(currentYear, 12, 31, 23, 59, 59).timestamp())
 meanVPS = (total-prevYearViews)/secsThisYear
 viewsPerDay = floor(meanVPS*60*60*24)
 meanVPS = round(meanVPS, 4)
