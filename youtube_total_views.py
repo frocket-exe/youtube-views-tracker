@@ -108,7 +108,7 @@ if updateInterval > 60:
     if hoursInt > 0:
         print(f"{hoursInt}h, ", end="")
         emailSubject = (f"WARNING: SERVER DOWN")
-        emailBody = (f"\nThe server has been down for {hoursInt}h, {minutesInt}mi and {secondsInt}s\n")
+        emailBody = (f"\nThe server has been down for {hoursInt}h, {minutesInt}m and {secondsInt}s\n")
         email(emailSubject, emailBody)
     print(f"{minutesInt}m and {secondsInt}s)")
 else:
