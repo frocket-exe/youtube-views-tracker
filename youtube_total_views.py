@@ -107,6 +107,9 @@ if updateInterval > 60:
     print("(", end="")
     if hoursInt > 0:
         print(f"{hoursInt}h, ", end="")
+        emailSubject = (f"WARNING: SERVER DOWN")
+        emailBody = (f"\nThe server has been down for {hoursInt}h, {minutesInt}m and {secondsInt}s\n")
+        email(emailSubject, emailBody)
     print(f"{minutesInt}m and {secondsInt}s)")
 else:
     print()
@@ -156,7 +159,9 @@ def milestoneDate(milestone):
     minsLeft = round(secsLeft/60)
     maxEmailTime = 120
     if secsLeft <= 60*maxEmailTime:
-        email(False, milestone, minsLeft)
+        emailSubject = (f"Upcoming milestone - {milestone:,}")
+        emailBody = (f"\nYou will achieve {milestone:,} views in {minsLeft} minutes\n")
+        email(emailSubject, emailBody)
         print("Email sent - upcoming\n")
     milestoneDay = local_time + timedelta(minutes = minsLeft)
     milestoneDay = milestoneDay.strftime("%d/%m/%Y   %H:%M")
@@ -168,7 +173,9 @@ def pastMilestoneDate(milestone):
     milestoneTimestamp = local_time - timedelta(seconds=secondsSince)
     milestoneTimestamp = milestoneTimestamp.strftime("%d/%m/%Y, %H:%M")
     print(f"Achieved {milestone:,} at {milestoneTimestamp}\n")
-    email(True, milestone, milestoneTimestamp)
+    emailSubject = (f"Achieved milestone - {milestone:,}")
+    emailBody = (f"\nYou achieved {milestone:,} views on {milestoneTimestamp}\n")
+    email(emailSubject, emailBody)
     print("Email sent - achieved\n")
     return milestoneTimestamp
 
