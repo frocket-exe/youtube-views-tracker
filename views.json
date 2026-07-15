@@ -1,20 +1,20 @@
 {
   "main": {
-    "total_views": 15664912,
+    "total_views": 15664925,
     "video_count": 39,
-    "timestamp": 1784082017
+    "timestamp": 1784083212
   },
   "estimation": {
-    "calc_vps": 0.0167,
+    "calc_vps": 0.0141,
     "vps_history": [
-      0.0667,
       0.0141,
       0.0267,
       0.0392,
       0.0167,
       0.1683,
       0.0299,
-      0.0609
+      0.0609,
+      0.0109
     ]
   }
 }
