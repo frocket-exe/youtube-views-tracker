@@ -95,10 +95,10 @@ def checkMilestones(totals):
         print(f"{nextMilestone:,} achieved at {timeAchieved}")
         pastMilestones.update({f"{nextMilestone:,}": timeAchieved})
         milestones.remove(nextMilestone)
-        with open("milestones.json", "w") as f:
+        with open("viewData/milestones.json", "w") as f:
             json.dump({"past": pastMilestones, "future":milestones}, f, indent=4)
         #SEND EMAIL
-        if len(milestones=2):
+        if len(milestones)==2:
             print("ONLY 2 FUTURE MILESTONES LEFT")
             #SEND EMAIL
     else:
@@ -112,6 +112,19 @@ def checkMilestones(totals):
             print(f"{nextMilestone:,} will be achieved at {timeAchieved} (in {timeUntil})")
             #SEND EMAIL
 
+
+def checkNewYear(totals):
+    timestamp = totals['timestamp']
+    currentYear = str(datetime.today().year)
+    with open("viewData/yearStartViews.json") as f:
+        prevYears = json.load(f)
+    if currentYear not in prevYears:
+        secondsThisYear = timestamp - int(datetime.strptime(f"01/01/{currentYear}", "%d/%m/%Y").timestamp())
+        viewsThisYear = round(secondsThisYear * totals['vps'])
+        yearStartViews = totals['totalViews'] - viewsThisYear
+        prevYears.update({currentYear: yearStartViews})
+        with open("viewData/yearStartViews.json", "w") as f:
+            json.dump(prevYears, f, indent=4)
 
 
 def estimations(totals):
@@ -141,17 +154,16 @@ def estimations(totals):
         dateAchieved = datetime.fromtimestamp(timestampAchieved)
         print(datetime.strftime(dateAchieved, "%d/%m/%Y  %H:%M:%S"))
     
-    
 
 def main():
-    # yt_update()
-    # ig_update()
-    # tt_update()
+    yt_update()
+    ig_update()
+    tt_update()
     totals = calcTotals()
-    print(f"{totals["totalViews"]:,} views\nacross {totals["totalVideoCount"]:,} videos")
+    print(f"{totals['totalViews']:,} views\nacross {totals['totalVideoCount']:,} videos")
     checkDowntime(totals)
     checkMilestones(totals)
-    # Check new year
+    checkNewYear(totals)
     estimations(totals)
 
 main()
