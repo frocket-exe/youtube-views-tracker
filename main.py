@@ -80,10 +80,38 @@ def checkDowntime(totals):
 
 
 def checkMilestones(totals):
+    totalViews = totals['totalViews']
     with open("viewData/milestones.json") as f:
-        milestones = json.load(f)['future']
+        json_data = json.load(f)
+        pastMilestones = json_data['past']
+        milestones = json_data['future']
     nextMilestone = milestones[0]
-    print(nextMilestone)
+    milestoneAchieved = (nextMilestone < totalViews)
+    if milestoneAchieved:
+        excessViews = totalViews - nextMilestone
+        secondsSinceMilestone = round(excessViews/totals['vps'])
+        timeAchieved = totals['timestamp'] - secondsSinceMilestone
+        timeAchieved = datetime.strftime(datetime.fromtimestamp(timeAchieved), "%d/%m/%Y  %H:%M")
+        print(f"{nextMilestone:,} achieved at {timeAchieved}")
+        pastMilestones.update({f"{nextMilestone:,}": timeAchieved})
+        milestones.remove(nextMilestone)
+        with open("milestones.json", "w") as f:
+            json.dump({"past": pastMilestones, "future":milestones}, f, indent=4)
+        #SEND EMAIL
+        if len(milestones=2):
+            print("ONLY 2 FUTURE MILESTONES LEFT")
+            #SEND EMAIL
+    else:
+        neededViews = nextMilestone - totalViews
+        neededSeconds = round(neededViews/totals['vps'])
+        neededMinutes = neededSeconds/60
+        if neededMinutes <= MAX_UPCOMING_TIME:
+            timeAchieved = totals['timestamp'] + neededSeconds
+            timeUntil = datetime.strftime(datetime.fromtimestamp(neededSeconds), "%H:%M:%S")
+            timeAchieved = datetime.strftime(datetime.fromtimestamp(timeAchieved), "%d/%m/%Y %H:%M")
+            print(f"{nextMilestone:,} will be achieved at {timeAchieved} (in {timeUntil})")
+            #SEND EMAIL
+
 
 
 def estimations(totals):
