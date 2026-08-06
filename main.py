@@ -70,6 +70,7 @@ def main():
     # Check milestones
     # Check new year
     # Print totals
+    print(f"{totals["totalViews"]:,} views\nacross {totals["totalVideoCount"]:,} videos")
     # Print estimations
 
 main()
