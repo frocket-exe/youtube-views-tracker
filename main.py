@@ -1,5 +1,8 @@
 import json
 from datetime import datetime
+from update_yt import yt_update
+from update_ig import ig_update
+from update_tt import tt_update
 
 DOWNTIME_MINTIME = 120 #120m = 2h
 MAX_UPCOMING_TIME = 120 #120m = 2h
@@ -39,11 +42,12 @@ def calcTotals():
         json_data = json.load(f)
         ytViews = json_data['totalViews']
         ytVideoCount = json_data['videoCount']
-        calcVPS = json_data['calcVPS']
+        ytCalcVPS = json_data['calcVPS']
     with open("views/yt-short_views.json") as f:
         json_data = json.load(f)
         ytShortViews = json_data['totalViews']
         ytShortVideoCount = json_data['videoCount']
+        ytShortCalcVPS = json_data['calcVPS']
     with open("views/ig_views.json") as f:
         json_data = json.load(f)
         igViews = json_data['totalViews']
@@ -55,16 +59,16 @@ def calcTotals():
     totalViews = ytViews + ytShortViews + igViews + ttViews
     totalVideoCount = ytVideoCount + ytShortVideoCount + igVideoCount + ttVideoCount
     timestamp = int(datetime.now().timestamp())
-    vps = calcVPS
+    vps = ytCalcVPS + ytShortCalcVPS
     totals = {"totalViews": totalViews, "totalVideoCount": totalVideoCount, "timestamp": timestamp, "vps": vps}
     with open("views/total_views.json", "w") as f:
         json.dump(totals, f, indent=4)
     return(totals)
 
 def main():
-    # Update YouTube views
-    # Update Instagram views
-    # Update TikTok views
+    yt_update()
+    ig_update()
+    tt_update()
     totals = calcTotals()
     # Check server downtime
     # Check milestones
