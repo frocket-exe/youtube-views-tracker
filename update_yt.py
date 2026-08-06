@@ -103,5 +103,3 @@ def yt_update():
         json.dump(shortJson, f, indent=4)
 
     print(f"Session tokens used: {SESSION_QUOTA_USED}")
-
-yt_update()

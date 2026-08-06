@@ -1,7 +1,7 @@
 {
     "totalViews": 12791,
     "videoCount": 2,
-    "timestamp": 1786010873,
+    "timestamp": 1786015171,
     "calcVPS": 0,
     "vpsHistory": [
         0,
@@ -9,9 +9,9 @@
         0,
         0,
         0,
-        0,
         0.0013,
-        0.0041
+        0.0041,
+        0.0024
     ],
     "videos": [
         {

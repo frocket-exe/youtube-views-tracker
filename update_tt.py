@@ -18,5 +18,3 @@ def tt_update():
     updatedJson = getTotals(videos)
     with open("views/tt_views.json", "w") as f:
         json.dump(updatedJson, f, indent=4)
-
-tt_update()

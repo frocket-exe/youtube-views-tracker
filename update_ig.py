@@ -17,5 +17,3 @@ def ig_update():
     updatedJson = getTotals(videos)
     with open("views/ig_views.json", "w") as f:
         json.dump(updatedJson, f, indent=4)
-
-ig_update()

@@ -65,6 +65,36 @@ def calcTotals():
         json.dump(totals, f, indent=4)
     return(totals)
 
+
+def estimations(totals):
+    timestamp = totals['timestamp']
+    currentYear = datetime.today().year
+    with open("viewData/yearStartViews.json") as f:
+        yearViews = json.load(f)
+        yearStartViews = yearViews[str(currentYear)]
+    currentViews = totals['totalViews']
+    viewsThisYear = currentViews - yearStartViews
+    secondsThisYear = timestamp - int(datetime.strptime(f"01/01/{currentYear}", "%d/%m/%Y").timestamp())
+    yearMeanVPS = round((viewsThisYear/secondsThisYear), 5)
+    secondsUntilYearEnd = int(datetime.strptime(f"31/12/{currentYear} 23:59:59", "%d/%m/%Y %H:%M:%S").timestamp()) - timestamp
+    yearEndViews = currentViews + (secondsUntilYearEnd*yearMeanVPS)
+    print(f"\n{yearMeanVPS} views per second mean")
+    print(f"{round(yearMeanVPS*86400):,} views per day mean")
+    print(f"{round(yearEndViews):,} views by end of the year\n")
+    with open("viewData/milestones.json") as f:
+        milestones = json.load(f)
+        futureMilestones = milestones['future']
+    print("Upcoming milestones:")
+    for milestone in futureMilestones:
+        print(f"{milestone:,}", end=" - ")
+        viewsUntilAchieved = milestone - currentViews
+        secondsUntilAchieved = round(viewsUntilAchieved/yearMeanVPS)
+        timestampAchieved = timestamp + secondsUntilAchieved
+        dateAchieved = datetime.fromtimestamp(timestampAchieved)
+        print(datetime.strftime(dateAchieved, "%d/%m/%Y  %H:%M:%S"))
+    
+    
+
 def main():
     yt_update()
     ig_update()
@@ -75,6 +105,6 @@ def main():
     # Check new year
     # Print totals
     print(f"{totals["totalViews"]:,} views\nacross {totals["totalVideoCount"]:,} videos")
-    # Print estimations
+    estimations(totals)
 
 main()
