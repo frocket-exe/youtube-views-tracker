@@ -61,9 +61,29 @@ def calcTotals():
     timestamp = int(datetime.now().timestamp())
     vps = ytCalcVPS + ytShortCalcVPS
     totals = {"totalViews": totalViews, "totalVideoCount": totalVideoCount, "timestamp": timestamp, "vps": vps}
+    with open("views/total_views.json") as f:
+        prevTime = json.load(f)['timestamp']
     with open("views/total_views.json", "w") as f:
         json.dump(totals, f, indent=4)
+    totals['prevTime'] = prevTime
     return(totals)
+
+
+def checkDowntime(totals):
+    secondsSinceUpdate = totals['timestamp'] - totals['prevTime']
+    minutesSinceUpdate = secondsSinceUpdate/60
+    if minutesSinceUpdate > DOWNTIME_MINTIME:
+        # Send downtime email
+        print(f"Server has been down for {round(minutesSinceUpdate)}m!!!")
+    else:
+        print(f"\nLast update {round(minutesSinceUpdate)}m ago")
+
+
+def checkMilestones(totals):
+    with open("viewData/milestones.json") as f:
+        milestones = json.load(f)['future']
+    nextMilestone = milestones[0]
+    print(nextMilestone)
 
 
 def estimations(totals):
@@ -96,15 +116,14 @@ def estimations(totals):
     
 
 def main():
-    yt_update()
-    ig_update()
-    tt_update()
+    # yt_update()
+    # ig_update()
+    # tt_update()
     totals = calcTotals()
-    # Check server downtime
-    # Check milestones
-    # Check new year
-    # Print totals
     print(f"{totals["totalViews"]:,} views\nacross {totals["totalVideoCount"]:,} videos")
+    checkDowntime(totals)
+    checkMilestones(totals)
+    # Check new year
     estimations(totals)
 
 main()

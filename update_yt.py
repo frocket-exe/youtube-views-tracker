@@ -102,4 +102,4 @@ def yt_update():
     with open(SHORT_JSON_PATH, "w") as f:
         json.dump(shortJson, f, indent=4)
 
-    print(f"Session tokens used: {SESSION_QUOTA_USED}")
+    print(f"Session tokens used: {SESSION_QUOTA_USED}\n\n")
