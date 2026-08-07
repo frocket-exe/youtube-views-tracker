@@ -152,7 +152,7 @@ def estimations(totals):
         secondsUntilAchieved = round(viewsUntilAchieved/yearMeanVPS)
         timestampAchieved = timestamp + secondsUntilAchieved
         dateAchieved = datetime.fromtimestamp(timestampAchieved)
-        print(datetime.strftime(dateAchieved, "%d/%m/%Y  %H:%M:%S"))
+        print(datetime.strftime(dateAchieved, "%d/%m/%Y  %H:%M"))
     
 
 def main():
