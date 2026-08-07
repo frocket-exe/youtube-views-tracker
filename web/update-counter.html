@@ -1,0 +1,146 @@
+<style>
+.container{width:100vw;height:auto;display:flex;flex-direction:column;align-items:center}.vidBox,.viewBox{width:100%;display:flex;justify-content:center;align-items:center;text-align:center;height:auto}.viewBox h1{margin:0;line-height:.9}.counterWrap{position:relative;display:inline-block}#views{position:relative;z-index:1}#viewsEyes{position:absolute;inset:0;z-index:2;pointer-events:none}#views,#viewsEyes{letter-spacing:.02em!important;font-kerning:none;white-space:nowrap;transform-origin:center}.unselectable{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.vidStyle{font-size:clamp(1.4rem, 3vw, 4.3rem);font-family:Calibri;color:#fff;font-weight:300;text-shadow:1px 1px 5px #000;vertical-align:bottom;margin-top:.2em;line-height:1.1}.odometer{display:inline-block;height:1em;vertical-align:middle;overflow:hidden}.odometer-inside{line-height:.5}.odometer-digit,.odometer-formatting-mark{line-height:1}@media (max-width:768px){.container{height:auto;gap:8px;padding:20px 0}.vidBox,.viewBox{width:95vw}.viewBox h1{line-height:.95}#views,#viewsEyes{font-size:clamp(3.25rem, 10vw, 8rem)!important;line-height:.9!important;letter-spacing:-.03em}}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.js" integrity="sha512-RDzHFG2YwmzCqd0Dmtslp7xOZyDjXBDjrZHd+C3qFHTtNF4MRQyas9XvAT3ezXS+jgpOF70VuN0bTI4rjEWxlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-minimal.css" integrity="sha512-82n59AgQXo3NhYHeauDYw9TE2zGh9yOdXN9wbiDZA+uaf0xOkSYxGNLzKMMngZQjBTw94EujhfEfKkYybQqfOQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-default.css" integrity="sha512-kMPqFnKueEwgQFzXLEEl671aHhQqrZLS5IP3HzqdfozaST/EgU+/wkM07JCmXFAt9GO810I//8DBonsJUzGQsQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<script>
+    if (sessionStorage.getItem("lastDispViews") == null)
+    {
+      sessionStorage.setItem("lastDispViews", 0);
+    }
+    let od1_val = (sessionStorage.getItem("lastDispViews"));
+  
+    const od1 = new Odometer({
+        el: document.getElementById("views"),
+        value: od1_val,
+        theme: 'minimal'
+    });
+
+    const od3 = new Odometer({
+        el: document.getElementById("viewsEyes"),
+        value: od1_val,
+        theme: 'minimal'
+    });
+
+    if (sessionStorage.getItem("lastVideoCount") == null)
+    {
+      sessionStorage.setItem("lastVideoCount", 0);
+    }
+    let od2_val = (sessionStorage.getItem("lastVideoCount"));
+
+    if (!sessionStorage.getItem("ctaShown")) {
+        const btn = document.querySelector('.wp-container-core-buttons-is-layout-e673bc0e');
+        btn.classList.add('cta-attention');
+
+        setTimeout(() => {
+            btn.classList.remove('cta-attention');
+        }, 7000);
+
+        sessionStorage.setItem("ctaShown", "true");
+    }  
+
+    const od2 = new Odometer({
+        el: document.getElementById("videos"),
+        value: od2_val,
+        theme: 'minimal'
+    });
+
+    const views = document.getElementById("views");
+    const viewsEyes = document.getElementById("viewsEyes");
+
+    const finePointer = window.matchMedia("(pointer:fine)");
+
+    let rect;
+
+    function updateRect() {
+        rect = views.getBoundingClientRect();
+    }
+
+    function moveEyes(e) {
+
+        if (!finePointer.matches) return;
+
+        const textY = rect.top + rect.height / 2;
+        const x = (e.clientX / window.innerWidth - 0.5) * 30;
+        const y = ((e.clientY + textY + window.scrollY) / window.innerHeight - 0.5) * 30;
+
+        viewsEyes.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    window.addEventListener("resize", updateRect);
+    document.addEventListener("mousemove", moveEyes);
+
+    updateRect();
+
+    let counterVisible = true;
+    const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        const wasVisible = counterVisible;
+        counterVisible = entry.isIntersecting;
+
+        if (!wasVisible && counterVisible && !document.hidden) {
+            refreshCounters();
+        }
+
+    });
+
+    }, {
+        threshold: 0.85
+    });
+
+    observer.observe(document.querySelector('.viewBox'));
+
+    document.addEventListener("visibilitychange", () => {
+    
+        if (!document.hidden && counterVisible) {
+            refreshCounters();
+        }
+
+});
+</script>
+
+<script>
+function refreshCounters() {
+
+    fetch("https://raw.githubusercontent.com/frocket-exe/youtube-views-tracker/multimedia/views/total_views.json")
+    .then(response => response.json())
+    .then(data => {
+        const prevTime = (data.timestamp);
+
+        const currentTime = new Date();
+        const currentTimeSecs = Math.floor(currentTime.getTime()/1000);
+
+        const interval = currentTimeSecs-prevTime;
+        let viewsEst = data.totalViews + Math.round(interval*data.vps);
+        
+        let lastViewData = sessionStorage.getItem("lastDispViews");
+        if (Number(lastViewData) > viewsEst)
+        {
+            console.log("Last views is bigger so use that");
+            console.log(viewsEst);
+            console.log(lastViewData);
+            viewsEst = parseInt(lastViewData);
+        }
+
+        od1.update(viewsEst);
+        od2.update(data.totalVideoCount);
+        od3.update(viewsEst);
+
+        sessionStorage.setItem("lastDispViews", viewsEst);
+        sessionStorage.setItem("lastVideoCount", data.totalVideoCount)
+    });
+}
+
+refreshCounters();
+setInterval(() => {
+    if (counterVisible && !document.hidden) {
+        refreshCounters();
+    }
+}, 15000);
+
+</script>
