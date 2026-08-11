@@ -1,42 +1,42 @@
 {
-    "totalViews": 15860173,
+    "totalViews": 15860322,
     "videoCount": 41,
-    "timestamp": 1786424413,
+    "timestamp": 1786425587,
     "calcVPS": 0.0988,
     "vpsHistory": [
-        0.1201,
         0.1227,
         0.1032,
         0.1093,
         0.0988,
         0.1117,
         0.0823,
-        0.212
+        0.212,
+        0.1269
     ],
     "videos": [
         {
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "26064"
+            "views": "26137"
         },
         {
             "url": "0iho_26FirA",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "52689"
+            "views": "52697"
         },
         {
             "url": "p8NnN90GIZo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "50737"
+            "views": "50742"
         },
         {
             "url": "qbUdeDP0eyY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "52358"
+            "views": "52400"
         },
         {
             "url": "osjLJ5mLb9w",
@@ -120,7 +120,7 @@
             "url": "fbduRJV0d3E",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "133315"
+            "views": "133322"
         },
         {
             "url": "L35vF2ykB48",
@@ -228,7 +228,7 @@
             "url": "m1K4iORD0fo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "363206"
+            "views": "363215"
         },
         {
             "url": "Nsr19T_82WM",
@@ -258,7 +258,7 @@
             "url": "6XfP5abAYh8",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1771766"
+            "views": "1771771"
         }
     ]
 }
