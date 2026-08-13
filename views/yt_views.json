@@ -1,24 +1,24 @@
 {
-    "totalViews": 15876216,
+    "totalViews": 15876268,
     "videoCount": 41,
-    "timestamp": 1786644014,
-    "calcVPS": 0.0501,
+    "timestamp": 1786645222,
+    "calcVPS": 0.043,
     "vpsHistory": [
-        0.1129,
         0.0624,
         0.0791,
         0.0391,
         0.1034,
         0.0501,
         0.0578,
-        0.0681
+        0.0681,
+        0.043
     ],
     "videos": [
         {
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "32314"
+            "views": "32332"
         },
         {
             "url": "0iho_26FirA",
@@ -30,7 +30,7 @@
             "url": "p8NnN90GIZo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "51030"
+            "views": "51041"
         },
         {
             "url": "qbUdeDP0eyY",
@@ -42,7 +42,7 @@
             "url": "osjLJ5mLb9w",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "30693"
+            "views": "30695"
         },
         {
             "url": "xpwW91sE2Dg",
@@ -90,7 +90,7 @@
             "url": "QCsMlwhvGS0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "598236"
+            "views": "598252"
         },
         {
             "url": "oSzy0ORsFQk",
@@ -150,7 +150,7 @@
             "url": "3B8cYnMr30o",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "316146"
+            "views": "316150"
         },
         {
             "url": "oxtss8xCZmY",
@@ -186,7 +186,7 @@
             "url": "Qac77IktH8c",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "510190"
+            "views": "510191"
         },
         {
             "url": "obLlB8T-P-g",
