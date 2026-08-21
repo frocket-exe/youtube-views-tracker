@@ -4,15 +4,21 @@
     "uniqueVideoCount": 0,
     "videos": [
         {
+            "url": "DcTV3PwKtDR",
+            "creator": "eviedotgym",
+            "views": 44800,
+            "duplicate": false
+        },
+        {
             "url": "DbdgZeYsgC6",
             "creator": "eviedotgym",
-            "views": 89723,
+            "views": 91900,
             "duplicate": true
         },
         {
             "url": "DbBBKaIMs4p",
             "creator": "eviedotgym",
-            "views": 103339,
+            "views": 104000,
             "duplicate": true
         }
     ]
