@@ -1,24 +1,24 @@
 {
-    "totalViews": 15914611,
+    "totalViews": 15914681,
     "videoCount": 41,
-    "timestamp": 1787269215,
-    "calcVPS": 0.0282,
+    "timestamp": 1787270415,
+    "calcVPS": 0.0328,
     "vpsHistory": [
-        0.0282,
         0.046,
         0.035,
         0.4306,
         0.0142,
         0.0566,
         0.0328,
-        0.2232
+        0.2232,
+        0.0583
     ],
     "videos": [
         {
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "40419"
+            "views": "40426"
         },
         {
             "url": "0iho_26FirA",
@@ -48,13 +48,13 @@
             "url": "xpwW91sE2Dg",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "80810"
+            "views": "80826"
         },
         {
             "url": "wPv_OI1o94I",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "89105"
+            "views": "89114"
         },
         {
             "url": "sgTtcVxWjk4",
@@ -78,19 +78,19 @@
             "url": "AkbpXdYQjq0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "84236"
+            "views": "84239"
         },
         {
             "url": "RAiB15AJ20E",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "177918"
+            "views": "177935"
         },
         {
             "url": "QCsMlwhvGS0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "606720"
+            "views": "606733"
         },
         {
             "url": "oSzy0ORsFQk",
@@ -132,7 +132,7 @@
             "url": "TlkUcEZ0lQ0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "314290"
+            "views": "314295"
         },
         {
             "url": "9NzHoTKdjRk",
