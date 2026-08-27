@@ -1,30 +1,30 @@
 {
-    "totalViews": 16591,
+    "totalViews": 16606,
     "videoCount": 2,
-    "timestamp": 1787790110,
-    "calcVPS": 0.0006,
+    "timestamp": 1787823404,
+    "calcVPS": 0.0005,
     "vpsHistory": [
-        0.0006,
         0.0012,
         0.0011,
         0.0006,
         0.0007,
         0.0005,
         0.0017,
-        0.0063
+        0.0063,
+        0.0005
     ],
     "videos": [
         {
             "url": "UCxkB463e9Y",
             "creator": "Evie",
             "channelID": "UCWfQvqxxqhZF6BqgQdQoKvg",
-            "views": "11009"
+            "views": "11017"
         },
         {
             "url": "yG21Hz-2p14",
             "creator": "Evie",
             "channelID": "UCWfQvqxxqhZF6BqgQdQoKvg",
-            "views": "5582"
+            "views": "5589"
         }
     ]
 }
