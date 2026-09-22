@@ -1,24 +1,24 @@
 {
-    "totalViews": 18699,
+    "totalViews": 18700,
     "videoCount": 2,
-    "timestamp": 1790079620,
+    "timestamp": 1790080814,
     "calcVPS": 0.0025,
     "vpsHistory": [
-        0.0058,
         0.0025,
         0.0025,
         0.0042,
         0.0084,
         0.0033,
         0.0092,
-        0.0037
+        0.0037,
+        0.0008
     ],
     "videos": [
         {
             "url": "UCxkB463e9Y",
             "creator": "Evie",
             "channelID": "UCWfQvqxxqhZF6BqgQdQoKvg",
-            "views": "12385"
+            "views": "12386"
         },
         {
             "url": "yG21Hz-2p14",
