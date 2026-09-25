@@ -1,17 +1,17 @@
 {
-    "totalViews": 16098917,
+    "totalViews": 16098934,
     "videoCount": 42,
-    "timestamp": 1790325614,
-    "calcVPS": 0.0091,
+    "timestamp": 1790326818,
+    "calcVPS": 0.0141,
     "vpsHistory": [
-        0.0058,
         0.0091,
         0.0467,
         0.0142,
         0.0419,
         0.0241,
         0.0284,
-        0.035
+        0.035,
+        0.0141
     ],
     "videos": [
         {
@@ -174,7 +174,7 @@
             "url": "PbzakVKZl9I",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1960287"
+            "views": "1960304"
         },
         {
             "url": "pKXJ77QOtoU",
