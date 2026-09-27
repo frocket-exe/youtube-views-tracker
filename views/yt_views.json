@@ -1,17 +1,17 @@
 {
-    "totalViews": 16102110,
+    "totalViews": 16102134,
     "videoCount": 42,
-    "timestamp": 1790475616,
+    "timestamp": 1790476814,
     "calcVPS": 0.0266,
     "vpsHistory": [
-        0.0201,
         0.0266,
         0.045,
         0.0278,
         0.0451,
         0.0299,
         0.0618,
-        0.0407
+        0.0407,
+        0.02
     ],
     "videos": [
         {
@@ -30,7 +30,7 @@
             "url": "0iho_26FirA",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "59188"
+            "views": "59196"
         },
         {
             "url": "p8NnN90GIZo",
@@ -162,7 +162,7 @@
             "url": "oxtss8xCZmY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "490650"
+            "views": "490656"
         },
         {
             "url": "MWaHmBId8Mo",
@@ -174,7 +174,7 @@
             "url": "PbzakVKZl9I",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1960493"
+            "views": "1960496"
         },
         {
             "url": "pKXJ77QOtoU",
@@ -228,13 +228,13 @@
             "url": "vpLxfa4hSzI",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "497994"
+            "views": "497996"
         },
         {
             "url": "m1K4iORD0fo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "364405"
+            "views": "364408"
         },
         {
             "url": "Nsr19T_82WM",
@@ -258,13 +258,13 @@
             "url": "ILAe5TNv5I4",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "437926"
+            "views": "437927"
         },
         {
             "url": "6XfP5abAYh8",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1772192"
+            "views": "1772193"
         }
     ]
 }
