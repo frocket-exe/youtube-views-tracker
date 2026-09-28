@@ -1,30 +1,30 @@
 {
-    "totalViews": 16104336,
+    "totalViews": 16104396,
     "videoCount": 42,
-    "timestamp": 1790562015,
-    "calcVPS": 0.0083,
+    "timestamp": 1790563213,
+    "calcVPS": 0.0137,
     "vpsHistory": [
-        0.0083,
         0.0876,
         0.0067,
         0.0176,
         0.0365,
         0.051,
         0.0137,
-        0.0696
+        0.0696,
+        0.0501
     ],
     "videos": [
         {
             "url": "w6pCMSnfFh0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "71884"
+            "views": "71886"
         },
         {
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "50956"
+            "views": "50980"
         },
         {
             "url": "0iho_26FirA",
@@ -36,7 +36,7 @@
             "url": "p8NnN90GIZo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "55440"
+            "views": "55455"
         },
         {
             "url": "qbUdeDP0eyY",
@@ -48,13 +48,13 @@
             "url": "osjLJ5mLb9w",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "33719"
+            "views": "33723"
         },
         {
             "url": "xpwW91sE2Dg",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "88249"
+            "views": "88261"
         },
         {
             "url": "wPv_OI1o94I",
@@ -162,7 +162,7 @@
             "url": "oxtss8xCZmY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "490670"
+            "views": "490672"
         },
         {
             "url": "MWaHmBId8Mo",
@@ -234,7 +234,7 @@
             "url": "m1K4iORD0fo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "364431"
+            "views": "364432"
         },
         {
             "url": "Nsr19T_82WM",
