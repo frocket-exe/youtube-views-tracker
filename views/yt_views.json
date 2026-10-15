@@ -1,42 +1,42 @@
 {
-    "totalViews": 16431967,
+    "totalViews": 16432090,
     "videoCount": 43,
-    "timestamp": 1792076416,
-    "calcVPS": 0.0608,
+    "timestamp": 1792077613,
+    "calcVPS": 0.0616,
     "vpsHistory": [
-        0.0608,
         0.0826,
         0.0209,
         0.0695,
         0.0616,
         0.1317,
         0.118,
-        0.0767
+        0.0767,
+        0.1028
     ],
     "videos": [
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "240583"
+            "views": "240645"
         },
         {
             "url": "w6pCMSnfFh0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "80608"
+            "views": "80622"
         },
         {
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "59387"
+            "views": "59419"
         },
         {
             "url": "0iho_26FirA",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "62777"
+            "views": "62784"
         },
         {
             "url": "p8NnN90GIZo",
@@ -60,7 +60,7 @@
             "url": "xpwW91sE2Dg",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "90049"
+            "views": "90053"
         },
         {
             "url": "wPv_OI1o94I",
@@ -174,7 +174,7 @@
             "url": "MWaHmBId8Mo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "993573"
+            "views": "993574"
         },
         {
             "url": "PbzakVKZl9I",
@@ -246,7 +246,7 @@
             "url": "Nsr19T_82WM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1156522"
+            "views": "1156525"
         },
         {
             "url": "CutMISBvgl8",
