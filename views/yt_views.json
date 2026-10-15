@@ -1,24 +1,24 @@
 {
-    "totalViews": 16427043,
+    "totalViews": 16427394,
     "videoCount": 43,
-    "timestamp": 1792039213,
-    "calcVPS": 0.1414,
+    "timestamp": 1792040414,
+    "calcVPS": 0.1532,
     "vpsHistory": [
-        0.1383,
         0.2148,
         0.2471,
         0.1532,
         0.1414,
         0.2133,
         0.9456,
-        0.1905
+        0.1905,
+        0.2923
     ],
     "videos": [
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "237912"
+            "views": "238111"
         },
         {
             "url": "w6pCMSnfFh0",
@@ -30,25 +30,25 @@
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "59197"
+            "views": "59253"
         },
         {
             "url": "0iho_26FirA",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "62735"
+            "views": "62743"
         },
         {
             "url": "p8NnN90GIZo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "57563"
+            "views": "57582"
         },
         {
             "url": "qbUdeDP0eyY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "60353"
+            "views": "60387"
         },
         {
             "url": "osjLJ5mLb9w",
@@ -102,7 +102,7 @@
             "url": "QCsMlwhvGS0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "634604"
+            "views": "634631"
         },
         {
             "url": "oSzy0ORsFQk",
@@ -228,7 +228,7 @@
             "url": "KkduV8zjyRw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "416757"
+            "views": "416765"
         },
         {
             "url": "vpLxfa4hSzI",
