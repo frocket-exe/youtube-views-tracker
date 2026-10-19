@@ -1,36 +1,36 @@
 {
-    "totalViews": 16524178,
+    "totalViews": 16524232,
     "videoCount": 44,
-    "timestamp": 1792438818,
-    "calcVPS": 0.1608,
+    "timestamp": 1792439282,
+    "calcVPS": 0.15,
     "vpsHistory": [
-        0.21,
         0.1662,
         0.1608,
         0.2545,
         0.1965,
         0.15,
         0.1694,
-        0.2498
+        0.2498,
+        0.1164
     ],
     "videos": [
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "47225"
+            "views": "47240"
         },
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "259275"
+            "views": "259281"
         },
         {
             "url": "w6pCMSnfFh0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "82742"
+            "views": "82748"
         },
         {
             "url": "VvBkUNQLnYw",
@@ -108,7 +108,7 @@
             "url": "QCsMlwhvGS0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "638490"
+            "views": "638493"
         },
         {
             "url": "oSzy0ORsFQk",
@@ -210,19 +210,19 @@
             "url": "obLlB8T-P-g",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1083154"
+            "views": "1083173"
         },
         {
             "url": "-HPdXHZsXnY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "445533"
+            "views": "445535"
         },
         {
             "url": "AKyYpM5PeVc",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "154811"
+            "views": "154814"
         },
         {
             "url": "aDZPEjUE4YA",
