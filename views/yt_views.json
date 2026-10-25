@@ -1,36 +1,36 @@
 {
-    "totalViews": 16590352,
+    "totalViews": 16590528,
     "videoCount": 44,
-    "timestamp": 1792950011,
+    "timestamp": 1792951217,
     "calcVPS": 0.0987,
     "vpsHistory": [
-        0.1653,
         0.1009,
         0.339,
         0.0378,
         0.1145,
         0.1797,
         0.1399,
-        0.0987
+        0.0987,
+        0.1459
     ],
     "videos": [
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "66703"
+            "views": "66731"
         },
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "270465"
+            "views": "270492"
         },
         {
             "url": "w6pCMSnfFh0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "85208"
+            "views": "85245"
         },
         {
             "url": "VvBkUNQLnYw",
@@ -54,7 +54,7 @@
             "url": "qbUdeDP0eyY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "63744"
+            "views": "63795"
         },
         {
             "url": "osjLJ5mLb9w",
@@ -120,13 +120,13 @@
             "url": "93StOcmCQSs",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "220340"
+            "views": "220349"
         },
         {
             "url": "wlDtZm0Fdrc",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "185118"
+            "views": "185140"
         },
         {
             "url": "G_K2t3Ccodc",
@@ -240,7 +240,7 @@
             "url": "vpLxfa4hSzI",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "498576"
+            "views": "498578"
         },
         {
             "url": "m1K4iORD0fo",
