@@ -1,42 +1,42 @@
 {
-    "totalViews": 16603381,
+    "totalViews": 16603521,
     "videoCount": 44,
-    "timestamp": 1793053219,
-    "calcVPS": 0.0642,
+    "timestamp": 1793054422,
+    "calcVPS": 0.0856,
     "vpsHistory": [
-        0.0367,
         0.0642,
         0.1977,
         0.1826,
         0.0923,
         0.1037,
         0.1218,
-        0.0856
+        0.0856,
+        0.1164
     ],
     "videos": [
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "68981"
+            "views": "69008"
         },
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "272539"
+            "views": "272566"
         },
         {
             "url": "w6pCMSnfFh0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "85585"
+            "views": "85593"
         },
         {
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "65708"
+            "views": "65715"
         },
         {
             "url": "0iho_26FirA",
@@ -48,13 +48,13 @@
             "url": "p8NnN90GIZo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "59744"
+            "views": "59781"
         },
         {
             "url": "qbUdeDP0eyY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "65749"
+            "views": "65769"
         },
         {
             "url": "osjLJ5mLb9w",
@@ -90,7 +90,7 @@
             "url": "D1I-9fh8ytw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "110311"
+            "views": "110325"
         },
         {
             "url": "AkbpXdYQjq0",
