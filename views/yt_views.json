@@ -1,36 +1,36 @@
 {
-    "totalViews": 16604805,
+    "totalViews": 16604913,
     "videoCount": 44,
-    "timestamp": 1793062816,
-    "calcVPS": 0.1177,
+    "timestamp": 1793064015,
+    "calcVPS": 0.0901,
     "vpsHistory": [
-        0.1619,
         0.1177,
         0.1305,
         0.0708,
         0.1866,
         0.2234,
         0.1585,
-        0.1251
+        0.1251,
+        0.0901
     ],
     "videos": [
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "69229"
+            "views": "69253"
         },
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "272788"
+            "views": "272835"
         },
         {
             "url": "w6pCMSnfFh0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "85663"
+            "views": "85672"
         },
         {
             "url": "VvBkUNQLnYw",
@@ -54,7 +54,7 @@
             "url": "qbUdeDP0eyY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "65946"
+            "views": "65966"
         },
         {
             "url": "osjLJ5mLb9w",
@@ -66,7 +66,7 @@
             "url": "xpwW91sE2Dg",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "91755"
+            "views": "91760"
         },
         {
             "url": "wPv_OI1o94I",
@@ -270,13 +270,13 @@
             "url": "ILAe5TNv5I4",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "438146"
+            "views": "438147"
         },
         {
             "url": "6XfP5abAYh8",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1772476"
+            "views": "1772478"
         }
     ]
 }
