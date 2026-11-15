@@ -1,42 +1,42 @@
 {
-    "totalViews": 16802370,
+    "totalViews": 16802759,
     "videoCount": 45,
-    "timestamp": 1794742813,
-    "calcVPS": 0.3451,
+    "timestamp": 1794744012,
+    "calcVPS": 0.3303,
     "vpsHistory": [
-        0.4125,
         0.5788,
         0.5182,
         0.487,
         0.3945,
         0.4618,
         0.3451,
-        0.3303
+        0.3303,
+        0.3244
     ],
     "videos": [
         {
             "url": "Lv966azdfyw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "103822"
+            "views": "104124"
         },
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "80152"
+            "views": "80171"
         },
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "289220"
+            "views": "289243"
         },
         {
             "url": "w6pCMSnfFh0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "88698"
+            "views": "88704"
         },
         {
             "url": "VvBkUNQLnYw",
@@ -54,7 +54,7 @@
             "url": "p8NnN90GIZo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "61860"
+            "views": "61869"
         },
         {
             "url": "qbUdeDP0eyY",
@@ -108,7 +108,7 @@
             "url": "RAiB15AJ20E",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "191108"
+            "views": "191135"
         },
         {
             "url": "QCsMlwhvGS0",
@@ -252,7 +252,7 @@
             "url": "m1K4iORD0fo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "365556"
+            "views": "365559"
         },
         {
             "url": "Nsr19T_82WM",
