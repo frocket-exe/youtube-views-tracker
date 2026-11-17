@@ -1,36 +1,36 @@
 {
-    "totalViews": 16915342,
+    "totalViews": 16915696,
     "videoCount": 45,
-    "timestamp": 1794914411,
-    "calcVPS": 0.3287,
+    "timestamp": 1794915615,
+    "calcVPS": 0.294,
     "vpsHistory": [
-        0.603,
         0.4438,
         0.4346,
         0.4023,
         0.5324,
         0.3287,
         0.2626,
-        0.4261
+        0.4261,
+        0.294
     ],
     "videos": [
         {
             "url": "Lv966azdfyw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "198204"
+            "views": "198455"
         },
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "83144"
+            "views": "83154"
         },
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "293402"
+            "views": "293428"
         },
         {
             "url": "w6pCMSnfFh0",
@@ -42,7 +42,7 @@
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "71675"
+            "views": "71697"
         },
         {
             "url": "0iho_26FirA",
@@ -126,13 +126,13 @@
             "url": "93StOcmCQSs",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "223644"
+            "views": "223680"
         },
         {
             "url": "wlDtZm0Fdrc",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "187418"
+            "views": "187425"
         },
         {
             "url": "G_K2t3Ccodc",
@@ -180,7 +180,7 @@
             "url": "oxtss8xCZmY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "494185"
+            "views": "494187"
         },
         {
             "url": "MWaHmBId8Mo",
