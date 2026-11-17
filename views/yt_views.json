@@ -1,36 +1,36 @@
 {
-    "totalViews": 16912480,
+    "totalViews": 16913002,
     "videoCount": 45,
-    "timestamp": 1794907214,
-    "calcVPS": 0.4438,
+    "timestamp": 1794908415,
+    "calcVPS": 0.4427,
     "vpsHistory": [
-        0.4522,
         0.8979,
         0.7284,
         0.7465,
         0.4992,
         0.4427,
         0.603,
-        0.4438
+        0.4438,
+        0.4346
     ],
     "videos": [
         {
             "url": "Lv966azdfyw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "196204"
+            "views": "196584"
         },
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "83017"
+            "views": "83037"
         },
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "293257"
+            "views": "293285"
         },
         {
             "url": "w6pCMSnfFh0",
@@ -54,13 +54,13 @@
             "url": "p8NnN90GIZo",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "62224"
+            "views": "62251"
         },
         {
             "url": "qbUdeDP0eyY",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "70624"
+            "views": "70627"
         },
         {
             "url": "osjLJ5mLb9w",
@@ -78,7 +78,7 @@
             "url": "wPv_OI1o94I",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "101894"
+            "views": "101930"
         },
         {
             "url": "sgTtcVxWjk4",
@@ -102,7 +102,7 @@
             "url": "AkbpXdYQjq0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "91383"
+            "views": "91411"
         },
         {
             "url": "RAiB15AJ20E",
