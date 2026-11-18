@@ -1,30 +1,30 @@
 {
-    "totalViews": 16960717,
+    "totalViews": 16960886,
     "videoCount": 45,
-    "timestamp": 1795023615,
-    "calcVPS": 0.1744,
+    "timestamp": 1795024815,
+    "calcVPS": 0.1408,
     "vpsHistory": [
-        0.3034,
         0.3272,
         0.219,
         0.1965,
         0.1744,
         0.3289,
         0.0556,
-        0.2022
+        0.2022,
+        0.1408
     ],
     "videos": [
         {
             "url": "Lv966azdfyw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "231089"
+            "views": "231253"
         },
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "85177"
+            "views": "85186"
         },
         {
             "url": "eh7zaQ0es-A",
@@ -192,7 +192,7 @@
             "url": "PbzakVKZl9I",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1975410"
+            "views": "1975412"
         },
         {
             "url": "pKXJ77QOtoU",
@@ -234,7 +234,7 @@
             "url": "aDZPEjUE4YA",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "446036"
+            "views": "446032"
         },
         {
             "url": "KkduV8zjyRw",
@@ -270,19 +270,19 @@
             "url": "6SGQ9JMpNgg",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "321206"
+            "views": "321205"
         },
         {
             "url": "ILAe5TNv5I4",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "438341"
+            "views": "438342"
         },
         {
             "url": "6XfP5abAYh8",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "1772727"
+            "views": "1772725"
         }
     ]
 }
