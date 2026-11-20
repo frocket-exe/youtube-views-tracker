@@ -1,36 +1,36 @@
 {
-    "totalViews": 16996793,
+    "totalViews": 16997318,
     "videoCount": 45,
-    "timestamp": 1795141212,
-    "calcVPS": 0.2191,
+    "timestamp": 1795142425,
+    "calcVPS": 0.2564,
     "vpsHistory": [
-        0.2191,
         0.2575,
         0.4811,
         0.2564,
         0.2854,
         0.2078,
         0.2696,
-        0.2692
+        0.2692,
+        0.4328
     ],
     "videos": [
         {
             "url": "Lv966azdfyw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "255417"
+            "views": "255789"
         },
         {
             "url": "JkHaIFB3hxM",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "86950"
+            "views": "86975"
         },
         {
             "url": "eh7zaQ0es-A",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "297289"
+            "views": "297311"
         },
         {
             "url": "w6pCMSnfFh0",
@@ -42,7 +42,7 @@
             "url": "VvBkUNQLnYw",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "74878"
+            "views": "74886"
         },
         {
             "url": "0iho_26FirA",
@@ -108,13 +108,13 @@
             "url": "RAiB15AJ20E",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "192826"
+            "views": "192885"
         },
         {
             "url": "QCsMlwhvGS0",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "649157"
+            "views": "649174"
         },
         {
             "url": "oSzy0ORsFQk",
@@ -138,7 +138,7 @@
             "url": "G_K2t3Ccodc",
             "creator": "KohlPowered",
             "channelID": "UC6DSlqCZ_p9Hid6ZX1u665g",
-            "views": "350416"
+            "views": "350438"
         },
         {
             "url": "fbduRJV0d3E",
